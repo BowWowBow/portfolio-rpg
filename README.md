@@ -1,16 +1,67 @@
-# React + Vite
+# 🎮 Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio 대표 이미지](public/cover.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 프로젝트 소개
 
-## React Compiler
+AI를 활용해 원하는 서비스를 현실로 만드는 개발자 포트폴리오입니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+RPG 컨셉을 적용하여 프로젝트를 하나의 세계처럼 탐험할 수 있도록 제작했습니다.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ 주요 기능
+
+### 🎮 RPG 컨셉
+
+- Start Adventure
+- 캐릭터 애니메이션
+- 프로젝트 월드맵
+
+### 📂 프로젝트
+
+- WhisperMe
+- Auto-Order
+- ToyShop
+- Tannus MES
+
+### 🌐 링크
+
+- 홈페이지 이동
+- GitHub 이동
+
+### 📱 Responsive
+
+- PC
+- Tablet
+- Mobile
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Stack |
+|----------|-------|
+| Frontend | React, Vite, CSS |
+| Animation | CSS Animation |
+| Deployment | AWS EC2, Nginx |
+
+---
+
+## 🌐 Demo
+
+Portfolio
+
+http://43.203.123.217
+
+---
+
+## 🚀 핵심 구현
+
+- RPG 스타일 UI
+- 부드러운 스크롤 애니메이션
+- 프로젝트 카드
+- 반응형 웹
+- GitHub / 홈페이지 연동
