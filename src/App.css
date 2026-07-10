@@ -122,6 +122,7 @@ a {
 .intro-box h2 {
   color: #cbd5e1;
   font-size: clamp(22px, 4vw, 38px);
+  margin-top: 30px;   /* 추가 */
 }
 
 .intro-sub {
@@ -353,9 +354,9 @@ a {
 
 .bug {
   position: absolute;
-  right: 18%;
+  right: 5%;
   top: 34%;
-  font-size: 54px;
+  font-size: 70px;
   z-index: 4;
   animation: bugIdle 1.4s ease-in-out infinite;
 }
@@ -437,7 +438,9 @@ a {
 .hero-copy h2 {
   color: #93c5fd;
   font-size: clamp(20px, 3vw, 32px);
-  margin-bottom: 20px;
+
+  margin-top: 25px;      /* 추가 */
+  margin-bottom: 5px;
 }
 
 .hero-copy p {
@@ -518,15 +521,36 @@ a {
   font-weight: 1000;
 }
 
-.project-card h3 {
-  margin: 10px 0;
-  font-size: 24px;
-}
+.project-card h3{
+  height:120px;              /* 95 -> 120 */
 
-.project-card p {
-  color: #cbd5e1;
-  line-height: 1.6;
-  min-height: 76px;
+  display:flex;
+  justify-content:center;
+
+  align-items:flex-end;      /* 가운데 -> 아래 */
+
+  padding-bottom:18px;       /* 조금 더 아래 */
+
+  margin:0;
+
+  font-size:34px;
+  font-weight:900;
+  line-height:1.12;
+
+  color:#7dd3fc;
+
+  text-align:center;
+
+  text-shadow:
+          0 0 18px rgba(56,189,248,.45),
+          0 4px 18px rgba(0,0,0,.35);
+}
+.project-card p{
+  height:60px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  margin:0 0 24px;
 }
 
 .project-card a {
@@ -539,11 +563,17 @@ a {
   font-weight: 1000;
 }
 
-.project-detail {
-  padding: 32px;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: rgba(2,6,23,0.38);
+.project-detail{
+  margin-top:35px;
+
+  padding:50px;
+
+  border-radius:36px;
+
+  background:#111827;
+
+  box-shadow:
+          0 30px 80px rgba(0,0,0,.45);
 }
 
 .detail-head {
@@ -575,9 +605,9 @@ a {
 }
 
 .detail-grid article {
-  padding: 24px;
+  padding: 34px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 26px;
   background: rgba(255,255,255,0.06);
 }
 
@@ -659,12 +689,23 @@ pre {
 
 .trouble-card strong {
   display: block;
-  margin-bottom: 10px;
+  text-align: center;   /* 제목 가운데 */
+  margin-bottom: 14px;
   color: var(--yellow);
 }
 
+.trouble-card p {
+  text-align: left;     /* 설명 왼쪽 */
+  line-height: 1.8;
+}
+
 .trouble-card b {
+  display: block;
+  text-align: center;   /* 문제 / 해결 가운데 */
   color: var(--blue);
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 /* RESUME */
@@ -834,7 +875,7 @@ pre {
 
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-14px) rotate(1deg); }
+  50% { transform: translateY(30px) rotate(1deg); }
 }
 
 @keyframes idleArm {
@@ -1067,6 +1108,8 @@ pre {
 }
 
 .detail-head p {
+  font-size:20px;
+  line-height:1.9;
   color: #dbeafe;
 }
 
@@ -1084,7 +1127,8 @@ pre {
 }
 
 .robot-image{
-  width:100%;
+  width:220%;
+  transform: translateY(40px);
   height:auto;
   user-select:none;
   pointer-events:none;
@@ -1834,4 +1878,275 @@ pre {
 .comment {
   color: #94a3b8;
   font-style: italic;
+}
+
+.visit-btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 220px;
+  height: 58px;
+
+  padding: 0 28px;
+
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+.detail-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.demo-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 220px;
+  height: 58px;
+  padding: 0 28px;
+
+  border-radius: 999px;
+
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+
+  color: #020617;
+  background: linear-gradient(135deg, #fb7185, #facc15);
+
+  box-shadow: 0 18px 45px rgba(251, 113, 133, 0.28);
+  transition: 0.25s ease;
+}
+
+.demo-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(251, 113, 133, 0.38);
+}
+
+@media (max-width: 760px) {
+  .detail-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .demo-btn {
+    width: 100%;
+  }
+}
+
+.detail-head {
+  align-items: flex-start;
+}
+
+.detail-head > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.detail-buttons .visit-btn,
+.detail-buttons .demo-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 170px;
+  height: 56px;
+
+  padding: 0 22px;
+
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+
+  border-radius: 999px;
+
+  white-space: nowrap;
+}
+
+.demo-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  color: #020617;
+  background: linear-gradient(135deg, #fb7185, #facc15);
+  box-shadow: 0 18px 45px rgba(251, 113, 133, 0.28);
+  transition: 0.25s ease;
+}
+
+.demo-btn:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== FINAL OVERRIDE ===== */
+
+.trouble-card{
+  text-align:center;
+}
+
+.trouble-card strong{
+  display:block;
+  color:var(--yellow);
+  margin-bottom:14px;
+}
+
+.trouble-card p{
+  text-align:center;
+  line-height:1.8;
+  color:#dbeafe;
+}
+
+.trouble-card b{
+  display:block;
+  color:#38bdf8;
+  margin:14px 0 8px;
+}
+
+/* 프로젝트 카드 */
+.project-card{
+  min-height:400px;   /* 405 → 500 */
+  padding:24px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.project-icon{
+  height:64px;
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:54px;
+  line-height:1;
+}
+
+.project-card > span{
+  display:block;
+  height:20px;
+  margin-bottom:10px;
+  line-height:20px;
+}
+
+/* 배지 */
+.project-medals{
+  display:flex;
+  flex-direction:column;   /* 세로 */
+  align-items:center;
+  gap:8px;
+  width:100%;
+  margin:14px 0 20px;
+}
+
+.medal{
+  width:170px;             /* 모든 배지 동일 폭 */
+  height:28px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:12px;
+  font-weight:900;
+
+  border-radius:999px;
+
+  white-space:nowrap;
+}
+
+.medal.badge-work{
+  color:#fff;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+}
+
+.medal.badge-personal{
+  color:#111827;
+  background:linear-gradient(135deg,#facc15,#fde68a);
+}
+
+.medal.badge-service{
+  color:#052e16;
+  background:linear-gradient(135deg,#22c55e,#86efac);
+}
+
+.medal.badge-deploy{
+  color:#fff;
+  background:linear-gradient(135deg,#f59e0b,#fb923c);
+}
+
+.medal.badge-docker{
+  color:#fff;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+}
+
+.medal.badge-github{
+  color:#fff;
+  background:linear-gradient(135deg,#374151,#111827);
+}
+
+.medal.badge-ai{
+  color:#fff;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+}
+
+.project-card p{
+
+  min-height:60px;
+
+  margin-bottom:24px;
+
+  line-height:1.5;
+}
+
+.project-card a{
+  margin-top:auto;
+}
+
+/* 개인 실무 프로젝트 = 붉은 계열 */
+.medal.badge-work{
+  color:#fff;
+  background:linear-gradient(135deg,#f43f5e,#fb7185);
+}
+
+/* 배지 영역 높이 고정 */
+.project-medals{
+  height:150px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin:14px 0 0;
+}
+
+/* 설명 높이 통일 */
+.project-card p{
+  height:48px;
+  margin:0 0 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* 버튼 아래 고정 */
+.project-card a{
+  margin-top:auto;
 }

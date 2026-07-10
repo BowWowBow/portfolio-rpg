@@ -10,14 +10,39 @@ const projectLinks = {
   whisperme: "http://43.203.123.217:5173",
 };
 
+const githubLinks = {
+  tannus: "https://github.com/BowWowBow/Tannus-MES",
+  autoorder: "https://github.com/BowWowBow/Auto-Order",
+  toyshop: "https://github.com/BowWowBow/ToyShop",
+  whisperme: "https://github.com/BowWowBow/WhisperMe",
+};
+
+const demoLinks = {
+  tannus: "/videos/tannus.mp4",
+  autoorder: "/videos/autoorder.mp4",
+  toyshop: "/videos/toyshop.mp4",
+  whisperme: "/videos/whisperme.mp4",
+};
+
 const projects = [
   {
     id: "tannus",
     icon: "🏭",
     title: "Tannus MES",
+
+    badges: [
+      { text: "🏅 개인 실무 프로젝트", class: "badge-work" },
+      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
+      { text: "🟢 AWS 배포", class: "badge-deploy" },
+      { text: "🐳 Docker", class: "badge-docker" },
+      { text: "💻 GitHub", class: "badge-github" },
+    ],
+
     type: "제조 / 물류 관리 시스템",
     level: 40,
     url: projectLinks.tannus,
+    github: githubLinks.tannus,
+    demo: demoLinks.tannus,
     summary:
         "🏭 Tannus MES\n" +
         "\n" +
@@ -37,6 +62,42 @@ const projects = [
         title: "QR 상태값 검증",
         code: `if (status.equals("READY_TO_SHIP")) {
     packingService.scanQr(qrId);
+}`
+      },
+      {
+        title: "부분 스캔 처리",
+        code: `scanQty++;
+
+if (scanQty >= orderQty) {
+    packingMapper.updateStatus(
+        packingId,
+        "READY_TO_SHIP"
+    );
+}`
+      },
+      {
+        title: "입고 확정 및 재고 반영",
+        code: `@Transactional
+public void confirmReceive(...) {
+
+    stockMapper.increaseStock(
+        itemId,
+        receiveQty
+    );
+
+    stockHistoryMapper.insert(
+        itemId,
+        "IN",
+        receiveQty
+    );
+}`
+      },
+      {
+        title: "권한(Role) 검증",
+        code: `if (!loginRole.equals("PACKING")) {
+    throw new AccessDeniedException(
+        "권한이 없습니다."
+    );
 }`
       },
     ],
@@ -88,9 +149,19 @@ scanner.render(onScanSuccess);`
     id: "autoorder",
     icon: "📦",
     title: "AutoOrder",
+
+    badges: [
+      { text: "🏅 개인 실무 프로젝트", class: "badge-work" },
+      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
+      { text: "🟢 AWS 배포", class: "badge-deploy" },
+      { text: "🐳 Docker", class: "badge-docker" },
+      { text: "💻 GitHub", class: "badge-github" },
+    ],
     type: "소매 자동발주 시스템",
     level: 32,
     url: projectLinks.autoorder,
+    github: githubLinks.autoorder,
+    demo: demoLinks.autoorder,
     summary:
         "📦 AutoOrder\n" +
         "\n" +
@@ -171,9 +242,19 @@ public void createAutoOrders() {
     id: "toyshop",
     icon: "🧸",
     title: "ToyShop",
+    badges: [
+      { text: "🏅 개인 프로젝트", class: "badge-personal" },
+      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
+      { text: "🟢 AWS 배포", class: "badge-deploy" },
+      { text: "🐳 Docker", class: "badge-docker" },
+      { text: "💻 GitHub", class: "badge-github" },
+    ],
+
     type: "쇼핑몰 프로젝트",
     level: 25,
     url: projectLinks.toyshop,
+    github: githubLinks.toyshop,
+    demo: demoLinks.toyshop,
     summary:
         "🧸 ToyShop\n" +
         "\n" +
@@ -238,15 +319,39 @@ order.setPaymentStatus("PAID");`
         problem: "관리자에서 결제확인, 상품준비, 배송중 상태를 잘못 변경했을 때 복구할 기준이 필요했습니다.",
         solve: "주문 상태와 배송 정보를 분리하고 단계별 되돌리기 로직을 만들어 이전 상태로 복구할 수 있게 했습니다.",
       },
+      {
+        title: "대표 이미지 예외 처리",
+        problem:
+            "상품 이미지가 없거나 잘못된 경로일 경우 깨진 이미지가 표시되어 화면 품질이 떨어지는 문제가 있었습니다.",
+        solve:
+            "기본 이미지(no-image.png)를 제공하고 이미지가 없으면 자동으로 대체 이미지를 출력하도록 처리했습니다.",
+      },
+      {
+        title: "기본 배송지 관리",
+        problem:
+            "배송지를 여러 개 등록한 회원은 주문할 때마다 배송지를 다시 선택해야 하는 불편함이 있었습니다.",
+        solve:
+            "기본 배송지 기능을 추가하여 주문 페이지 진입 시 기본 배송지가 자동으로 선택되도록 구현했습니다.",
+      },
     ],
   },
   {
     id: "whisperme",
     icon: "🐳",
     title: "WhisperMe",
+    badges: [
+      { text: "🏅 개인 프로젝트", class: "badge-personal" },
+      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
+      { text: "🤖 AI 서비스", class: "badge-ai" },
+      { text: "🟢 AWS 배포", class: "badge-deploy" },
+      { text: "🐳 Docker", class: "badge-docker" },
+      { text: "💻 GitHub", class: "badge-github" },
+    ],
     type: "AI 상담 웹앱",
     level: 35,
     url: projectLinks.whisperme,
+    github: githubLinks.whisperme,
+    demo: demoLinks.whisperme,
     summary:
         "🐳 WhisperMe\n" +
         "\n" +
@@ -359,7 +464,7 @@ const resumeSections = [
   {
     tag: "MOTIVATION",
 
-    title: "왜 개발자가 되었는가",
+    title: "왜 개발자를 하려고 하는가?",
 
     text: `
 
@@ -585,8 +690,8 @@ function App() {
 
           <section className="intro-box">
             <p className="pixel-small">DEVELOPER QUEST</p>
-            <h1>KYUNGSOO</h1>
-            <h2>AI-Assisted Full Stack Developer</h2>
+            <h1>Full Stack Developer</h1>
+            <h2>JUNG KYUNG SU</h2>
             <p className="intro-sub">AI를 활용해 아이디어를 현실의 서비스로 만드는 개발자</p>
             <button className="press-start" onClick={() => setScreen("select")}>
               PRESS START
@@ -917,7 +1022,7 @@ function App() {
             <p className="section-label">MISSION COMPLETE</p>
             <h2>READY FOR NEXT MISSION</h2>
             <p>
-              현장을 이해하고 AI를 활용하여 아이디어를 현실의 서비스로 만드는 개발자 정경수
+              현장을 이해하고 AI를 활용하여 아이디어를 현실의 서비스로 만드는 개발자
             </p>
           </section>
         </main>
@@ -982,8 +1087,19 @@ function App() {
                 >
                   <div className="project-icon">{project.icon}</div>
                   <span>LV.{project.level}</span>
+
+                  <div className="project-medals">
+                    {project.badges.map((badge) => (
+                        <div key={badge.text} className={`medal ${badge.class}`}>
+                          {badge.text}
+                        </div>
+                    ))}
+                  </div>
+
                   <h3>{project.title}</h3>
+
                   <p>{project.type}</p>
+
                   <a
                       href={project.url}
                       target="_blank"
@@ -999,15 +1115,31 @@ function App() {
           <div className="project-detail">
             <div className="detail-head">
               <div>
-                <p className="section-label">README</p>
+                <p className="section-label">Project</p>
                 <h2>
                   {selectedProject.icon} {selectedProject.title}
                 </h2>
                 <p>{selectedProject.summary}</p>
               </div>
-              <a className="visit-btn" href={selectedProject.url} target="_blank" rel="noopener noreferrer">
-                홈페이지 바로가기 ↗
-              </a>
+              <div className="detail-buttons">
+                <a
+                    className="visit-btn"
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                  📖README ↗
+                </a>
+
+                <a
+                    className="demo-btn"
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                  🎥DEMO ▶
+                </a>
+              </div>
             </div>
 
             <div className="detail-grid">
@@ -1080,15 +1212,20 @@ docker compose up -d --build`}</pre>
 
               <article className="wide">
                 <h3>트러블슈팅</h3>
+
                 <div className="trouble-grid">
-                  {selectedProject.troubleshooting.map((item) => (
+                  {(selectedProject.troubleshooting ?? []).map((item) => (
                       <div className="trouble-card" key={item.title}>
                         <strong>{item.title}</strong>
+
                         <p>
-                          <b>문제</b> {item.problem}
+                          <b>문제</b>
+                          {item.problem}
                         </p>
+
                         <p>
-                          <b>해결</b> {item.solve}
+                          <b>해결</b>
+                          {item.solve}
                         </p>
                       </div>
                   ))}
@@ -1100,7 +1237,7 @@ docker compose up -d --build`}</pre>
 
         <section className="ending">
           <p className="section-label">GAME CLEAR</p>
-          <h2>현장을 이해하고 서비스를 완성하는 개발자</h2>
+          <h2>THINK LOAD</h2>
           <p>사용자의 문제를 이해하고
             기술로 해결하는 개발자가 되겠습니다.</p>
         </section>
