@@ -222,32 +222,46 @@ a {
 }
 
 .top-bar {
-  position: sticky;
-  top: 16px;
-  z-index: 50;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 10px;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
   display: flex;
-  gap: 8px;
-  border: 1px solid var(--line);
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 10px;
+
   border-radius: 999px;
-  background: rgba(2,6,23,0.75);
-  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(10,15,25,.88);
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+          0 10px 30px rgba(0,0,0,.35);
 }
 
-.top-bar button {
-  padding: 10px 16px;
+.top-bar button{
+  padding: 11px 18px;
+
+  font-size: 13px;
+  font-weight: 900;
+
   border-radius: 999px;
-  background: transparent;
-  color: #cbd5e1;
-  font-weight: 1000;
+  color:#dbeafe;
+  background:transparent;
+
+  transition:.25s;
 }
 
-.top-bar button:hover {
-  background: rgba(56,189,248,0.16);
-  color: white;
+.top-bar button:hover{
+  background:rgba(56,189,248,.18);
+  color:#fff;
 }
+
 
 /* HERO */
 .hero-section {
@@ -3061,7 +3075,7 @@ pre {
   }
 
   .trouble-card b {
-    font-size: 17px !important;
+    font-size: 14px !important;
   }
 
   .trouble-card p {
@@ -3234,19 +3248,23 @@ pre {
 
   /* 마지막 페이지 */
   .ending {
-    min-height: 271mm !important;
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250mm !important;
+
     margin: 0 !important;
-    padding: 16mm 10mm !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+    padding: 78mm 10mm 20mm !important;
+
     border-radius: 24px !important;
+
     break-before: page !important;
     page-break-before: always !important;
+
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
-
   .ending h2 {
     font-size: 42px !important;
     line-height: 1.16 !important;
@@ -3267,5 +3285,193 @@ pre {
   .contact-card a,
   .contact-card p {
     font-size: 16px !important;
+  }
+}
+
+/* K-Digital Training */
+.k-digital-line {
+  width: 100%;
+  margin: 4px 0 24px;
+  padding: 15px 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  border-top: 1px solid rgba(56, 189, 248, 0.28);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.28);
+
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.k-digital-line strong {
+  color: #facc15;
+  font-size: 17px;
+  font-weight: 1000;
+  white-space: nowrap;
+}
+
+.k-digital-line span {
+  color: #f8fafc;
+  font-size: 15px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.k-digital-line em {
+  color: #7dd3fc;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PDF 페이지 잘림 최종 수정
+   반드시 App.css 파일의 가장 마지막에 두세요.
+   ========================================================= */
+@media print {
+  /* 큰 부모는 여러 페이지에 자연스럽게 이어지도록 허용 */
+  .project-zone,
+  .project-detail,
+  .detail-grid,
+  .detail-grid article.wide {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  /* 각 작은 카드 단위는 절대 페이지 중간에서 자르지 않음 */
+  .account-card,
+  .code-grid > div,
+  .integration-card,
+  .trouble-card,
+  .timeline article,
+  .cert-card,
+  .skill-category-card,
+  .contact-card {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 카드 그리드는 한 줄씩 출력하여 다음 페이지로 온전히 이동 */
+  .code-grid,
+  .integration-grid,
+  .trouble-grid {
+    display: block !important;
+  }
+
+  .code-grid > div,
+  .integration-card,
+  .trouble-card {
+    width: 100% !important;
+    margin: 0 0 7mm !important;
+  }
+
+  /* flex:1 때문에 코드 박스가 늘어나거나 잘리는 현상 제거 */
+  .code-grid > div {
+    flex: none !important;
+  }
+
+  .code-grid pre {
+    flex: none !important;
+  }
+
+  /* 코드 자체도 한 덩어리로 유지 */
+  pre {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 마지막 페이지는 내용 높이만큼만 사용 */
+  .ending {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 18mm 10mm !important;
+    overflow: visible !important;
+
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+  .trouble-grid {
+    display: block !important;
+  }
+
+  .trouble-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
+
+@media print {
+
+  /* 큰 섹션 제목과 첫 내용이 떨어지지 않게 */
+  .detail-grid > article.wide > h3 {
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+    margin-bottom: 5mm !important;
+  }
+
+  .detail-grid > article.wide > h3 + .integration-grid,
+  .detail-grid > article.wide > h3 + .trouble-grid {
+    break-before: avoid-page !important;
+    page-break-before: avoid !important;
+  }
+
+  /* API/자동화와 트러블슈팅은 새 페이지에서 깔끔하게 시작 */
+  .detail-grid > article.wide:has(.integration-grid),
+  .detail-grid > article.wide:has(.trouble-grid) {
+    break-before: page !important;
+    page-break-before: always !important;
+    padding-top: 7mm !important;
+  }
+
+  /* 카드 사이 간격을 조금 줄여 빈 공간 최소화 */
+  .integration-card,
+  .trouble-card {
+    margin-bottom: 4mm !important;
+  }
+
+  /* 섹션 제목 위아래 여백 정리 */
+  .detail-grid > article.wide:has(.integration-grid) > h3,
+  .detail-grid > article.wide:has(.trouble-grid) > h3 {
+    margin-top: 0 !important;
+    margin-bottom: 6mm !important;
   }
 }
