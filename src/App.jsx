@@ -1275,6 +1275,40 @@ function App() {
               </div>
             </div>
 
+            <section className="project-download-box">
+              <div className="project-download-copy">
+                <span>DOWNLOAD</span>
+                <h3>지원 자료 다운로드</h3>
+                <p>포트폴리오와 자기소개서를 PDF로 확인할 수 있습니다.</p>
+              </div>
+
+              <div className="project-download-buttons">
+                <a
+                    className="document-download-btn portfolio-pdf-btn"
+                    href="/downloads/포트폴리오.pdf"
+                    download="포트폴리오.pdf"
+                >
+                  <b>📘</b>
+                  <span>
+                    <small>PORTFOLIO PDF</small>
+                    포트폴리오 다운로드
+                  </span>
+                </a>
+
+                <a
+                    className="document-download-btn resume-pdf-btn"
+                    href="/downloads/자기소개서.pdf"
+                    download="자기소개서.pdf"
+                >
+                  <b>📄</b>
+                  <span>
+                    <small>RESUME PDF</small>
+                    자기소개서 다운로드
+                  </span>
+                </a>
+              </div>
+            </section>
+
             <div className="account-card">
 
               <h3>🧪 Demo Account</h3>

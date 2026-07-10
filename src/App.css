@@ -1761,9 +1761,9 @@ pre {
   }
 }
 
-  .flow-line{
-    justify-content:flex-start;
-  }
+.flow-line{
+  justify-content:flex-start;
+}
 
 
 .flow{
@@ -1808,8 +1808,8 @@ pre {
 }
 
 .integration-card{
-    flex:1;
-  }
+  flex:1;
+}
 .flow-arrow{
   flex:0 0 auto;
 }
@@ -2636,4 +2636,636 @@ pre {
 
   transform:translateY(-6px);
 
+}
+
+
+/* =========================
+   PROJECT DOWNLOAD BOX
+========================= */
+
+.project-download-box {
+  margin: 4px 0 28px;
+  padding: 26px 28px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(460px, 1.2fr);
+  align-items: center;
+  gap: 28px;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 26px;
+  background:
+          radial-gradient(circle at 12% 15%, rgba(56,189,248,.16), transparent 38%),
+          radial-gradient(circle at 88% 85%, rgba(139,92,246,.15), transparent 40%),
+          linear-gradient(135deg, rgba(15,23,42,.92), rgba(30,41,59,.76));
+  box-shadow:
+          0 22px 55px rgba(0,0,0,.25),
+          inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.project-download-copy span {
+  display: block;
+  margin-bottom: 8px;
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: .22em;
+}
+
+.project-download-copy h3 {
+  margin: 0 0 8px;
+  color: #f8fafc;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.project-download-copy p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.project-download-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.document-download-btn {
+  min-height: 76px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border-radius: 20px;
+  color: #07111f;
+  font-weight: 1000;
+  transition: .25s ease;
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+.document-download-btn:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.07);
+}
+
+.document-download-btn b {
+  flex: 0 0 auto;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.document-download-btn > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.document-download-btn small {
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: .12em;
+  opacity: .68;
+}
+
+.portfolio-pdf-btn {
+  background: linear-gradient(135deg, #38bdf8, #a78bfa);
+}
+
+.resume-pdf-btn {
+  background: linear-gradient(135deg, #facc15, #fb923c);
+}
+
+@media (max-width: 900px) {
+  .project-download-box {
+    grid-template-columns: 1fr;
+  }
+
+  .project-download-copy {
+    text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .project-download-box {
+    margin-bottom: 22px;
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .project-download-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .document-download-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   PRINT / PDF FINAL - SIZE ADJUSTED
+   웹 화면은 그대로 두고 PDF 출력 크기만 조절
+   ========================= */
+@media print {
+  .project-download-box {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    zoom: 1 !important;
+  }
+
+  body {
+    font-size: 15px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* PDF에서 불필요한 조작 요소 숨김 */
+  .top-bar,
+  .hero-buttons,
+  .project-grid,
+  .dialog-actions {
+    display: none !important;
+  }
+
+  /* 링크 버튼은 PDF에서도 표시 */
+  .detail-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .detail-buttons .visit-btn,
+  .detail-buttons .demo-btn,
+  .detail-buttons .excel-btn {
+    min-height: 46px !important;
+    padding: 0 22px !important;
+    font-size: 14px !important;
+  }
+
+  /* 인쇄 영역 폭 */
+  .page,
+  .portfolio-page,
+  .resume-page,
+  .hero-section,
+  .resume-hero,
+  .resume-section,
+  .project-zone,
+  .project-detail,
+  .detail-grid,
+  .ending {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  /* 첫 포트폴리오 표지 */
+  .hero-section {
+    min-height: 271mm !important;
+    padding: 14mm 8mm !important;
+    grid-template-columns: 1fr !important;
+    align-content: center !important;
+    gap: 10mm !important;
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  .battle-stage {
+    width: 100% !important;
+    min-height: 112mm !important;
+    border-radius: 28px !important;
+  }
+
+  .hero-character {
+    width: 250px !important;
+    height: 320px !important;
+  }
+
+  .robot-image {
+    width: 195% !important;
+    transform: translateY(28px) !important;
+  }
+
+  .hero-copy {
+    text-align: center !important;
+  }
+
+  .hero-copy h1 {
+    margin: 10px 0 16px !important;
+    font-size: 50px !important;
+    line-height: 1.04 !important;
+  }
+
+  .hero-copy h2 {
+    margin: 0 0 14px !important;
+    font-size: 24px !important;
+  }
+
+  .hero-copy p {
+    max-width: 170mm !important;
+    margin: 0 auto !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+  }
+
+  .pixel-small,
+  .section-label {
+    font-size: 14px !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  /* 프로젝트 전체 박스 */
+  .project-zone {
+    padding: 10mm 7mm !important;
+    border-radius: 24px !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .project-zone > h2 {
+    margin: 8px 0 20px !important;
+    font-size: 40px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  .project-detail {
+    margin-top: 0 !important;
+    padding: 8mm !important;
+    border-radius: 24px !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .detail-head {
+    margin-bottom: 6mm !important;
+    gap: 18px !important;
+  }
+
+  .detail-head h2 {
+    margin: 8px 0 !important;
+    font-size: 34px !important;
+    line-height: 1.15 !important;
+  }
+
+  .detail-head p {
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* 상세 카드: PDF에서는 한 줄 배치 */
+  .detail-grid {
+    display: block !important;
+  }
+
+  .detail-grid article {
+    width: 100% !important;
+    margin: 0 0 7mm !important;
+    padding: 7mm !important;
+    border-radius: 20px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .detail-grid h3 {
+    margin-bottom: 14px !important;
+    font-size: 23px !important;
+    line-height: 1.25 !important;
+  }
+
+  .detail-grid p,
+  .detail-grid li {
+    font-size: 15px !important;
+    line-height: 1.72 !important;
+  }
+
+  .detail-grid ul {
+    padding-left: 22px !important;
+  }
+
+  .chip-wrap,
+  .skill-grid {
+    gap: 9px !important;
+  }
+
+  .chip-wrap span,
+  .skill-grid span {
+    padding: 9px 13px !important;
+    font-size: 13px !important;
+  }
+
+  /* 계정 카드 */
+  .account-card {
+    margin: 5mm 0 !important;
+    padding: 6mm !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .account-card h3 {
+    font-size: 21px !important;
+  }
+
+  .account-row {
+    grid-template-columns: 100px 1fr 1fr !important;
+    gap: 14px !important;
+    padding: 10px 0 !important;
+  }
+
+  .account-row strong,
+  .account-row span {
+    font-size: 14px !important;
+  }
+
+  /* 흐름도 */
+  .flow-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .flow-step,
+  .flow-arrow {
+    font-size: 14px !important;
+  }
+
+  /* 코드 카드 */
+  .code-grid,
+  .integration-grid,
+  .trouble-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 5mm !important;
+  }
+
+  .code-grid > div,
+  .integration-card,
+  .trouble-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  pre {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-top: 12px !important;
+    padding: 18px !important;
+    overflow: visible !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+  }
+
+  .trouble-card {
+    padding: 6mm !important;
+  }
+
+  .trouble-card strong {
+    margin-bottom: 12px !important;
+    font-size: 20px !important;
+  }
+
+  .trouble-card b {
+    font-size: 17px !important;
+  }
+
+  .trouble-card p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 이력서 첫 페이지 */
+  .resume-page {
+    padding-top: 0 !important;
+  }
+
+  .resume-hero {
+    min-height: 271mm !important;
+    padding: 10mm 0 !important;
+    grid-template-columns: 0.82fr 1.18fr !important;
+    align-content: center !important;
+    gap: 7mm !important;
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  .avatar-card,
+  .dialog-box {
+    padding: 7mm !important;
+    border-radius: 24px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .profile-photo-wrap {
+    width: 120px !important;
+    height: 152px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .avatar-card h1 {
+    margin: 10px 0 6px !important;
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+
+  .avatar-card p,
+  .avatar-card span {
+    font-size: 13px !important;
+  }
+
+  .profile-info {
+    margin-top: 18px !important;
+    padding: 16px !important;
+    gap: 8px !important;
+  }
+
+  .profile-row,
+  .profile-row strong,
+  .profile-row span {
+    font-size: 13px !important;
+  }
+
+  .dialog-box h2 {
+    font-size: 29px !important;
+    line-height: 1.18 !important;
+  }
+
+  .dialog-box p {
+    font-size: 14px !important;
+    line-height: 1.72 !important;
+  }
+
+  /* 이력서 각 섹션 */
+  .resume-section {
+    margin: 0 0 7mm !important;
+    padding: 8mm !important;
+    border-radius: 22px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .resume-section h2 {
+    margin: 8px 0 18px !important;
+    font-size: 34px !important;
+    line-height: 1.15 !important;
+  }
+
+  .status-board {
+    margin-top: 5mm !important;
+    gap: 12px !important;
+  }
+
+  .status-row {
+    grid-template-columns: 150px 1fr 70px !important;
+    gap: 12px !important;
+  }
+
+  .status-row span,
+  .status-row strong {
+    font-size: 14px !important;
+  }
+
+  .status-bar {
+    height: 10px !important;
+  }
+
+  .skill-category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 5mm !important;
+  }
+
+  .skill-category {
+    padding: 5mm !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .skill-category h3 {
+    font-size: 19px !important;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 5mm !important;
+  }
+
+  .timeline article {
+    padding: 6mm !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .timeline article span {
+    font-size: 13px !important;
+  }
+
+  .timeline article h3 {
+    margin: 9px 0 12px !important;
+    font-size: 21px !important;
+  }
+
+  .timeline article p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .certificate-list {
+    gap: 12px !important;
+    margin-top: 20px !important;
+  }
+
+  .cert-card {
+    padding: 16px 20px !important;
+    gap: 16px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .cert-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 24px !important;
+  }
+
+  .cert-info h3 {
+    font-size: 18px !important;
+  }
+
+  .cert-info p,
+  .cert-card span {
+    font-size: 13px !important;
+  }
+
+  /* 마지막 페이지 */
+  .ending {
+    min-height: 271mm !important;
+    margin: 0 !important;
+    padding: 16mm 10mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    border-radius: 24px !important;
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .ending h2 {
+    font-size: 42px !important;
+    line-height: 1.16 !important;
+  }
+
+  .ending p {
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+  }
+
+  .contact-card {
+    margin-top: 8mm !important;
+    padding: 8mm !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .contact-card a,
+  .contact-card p {
+    font-size: 16px !important;
+  }
 }
