@@ -44,6 +44,11 @@ const projects = [
     url: projectLinks.tannus,
     github: githubLinks.tannus,
     demo: demoLinks.tannus,
+    accounts: [
+      { role: "관리자", id: "admin", pw: "1234" },
+      { role: "포장팀", id: "pack", pw: "1234" },
+      { role: "물류팀", id: "logi", pw: "1234" },
+    ],
     summary:
         "🏭 Tannus MES\n" +
         "\n" +
@@ -163,6 +168,10 @@ scanner.render(onScanSuccess);`
     url: projectLinks.autoorder,
     github: githubLinks.autoorder,
     demo: demoLinks.autoorder,
+    accounts: [
+      { role: "관리자", id: "admin", pw: "1234" },
+      { role: "직원", id: "staff", pw: "1111" },
+    ],
     summary:
         "📦 AutoOrder\n" +
         "\n" +
@@ -256,6 +265,12 @@ public void createAutoOrders() {
     url: projectLinks.toyshop,
     github: githubLinks.toyshop,
     demo: demoLinks.toyshop,
+    accounts: [
+      { role: "관리자", id: "admin", pw: "1234" },
+      { role: "일반회원", id: "staff1", pw: "1234" },
+      { role: "일반회원", id: "staff2", pw: "1234" },
+      { role: "일반회원", id: "staff3", pw: "1234" },
+    ],
     summary:
         "🧸 ToyShop\n" +
         "\n" +
@@ -353,6 +368,10 @@ order.setPaymentStatus("PAID");`
     url: projectLinks.whisperme,
     github: githubLinks.whisperme,
     demo: demoLinks.whisperme,
+    accounts: [
+      { role: "일반회원", id: "test", pw: "1234" },
+      { role: "일반회원", id: "test1", pw: "1234" },
+    ],
     summary:
         "🐳 WhisperMe\n" +
         "\n" +
@@ -1240,6 +1259,35 @@ function App() {
                   🎥DEMO ▶
                 </a>
               </div>
+            </div>
+
+            <div className="account-card">
+
+              <h3>🧪 Demo Account</h3>
+
+              {(selectedProject.accounts ?? []).map((account) => (
+
+                  <div className="account-row" key={account.id}>
+
+                    <strong>{account.role}</strong>
+
+                    <span>ID : {account.id}</span>
+
+                    <span>PW : {account.pw}</span>
+
+                  </div>
+
+              ))}
+
+              {(selectedProject.id === "toyshop" ||
+                  selectedProject.id === "whisperme") && (
+
+                  <p className="join-text">
+                    ✅ 회원가입도 가능합니다.
+                  </p>
+
+              )}
+
             </div>
 
             <div className="detail-grid">
