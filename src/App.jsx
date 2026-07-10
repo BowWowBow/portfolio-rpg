@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import profilePhoto from "./assets/profile.jpg";
 import robot from "./assets/robot.png";
+
 
 const projectLinks = {
   tannus: "https://mes.jkyungsoo.com",
@@ -691,6 +692,42 @@ function App() {
 
   };
 
+  const scrollTopHard = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  useEffect(() => {
+    scrollTopHard();
+  }, [screen]);
+
+  const moveScreen = (target) => {
+    if (target === screen) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    setScreen(target);
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 50);
+  };
+
+  const moveToProjects = () => {
+    document.getElementById("project-zone")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   const startBattle = () => {
     setBattle(true);
     setTimeout(() => setBattle(false), 1700);
@@ -768,8 +805,8 @@ function App() {
     return (
         <main className="page resume-page">
           <nav className="top-bar">
-            <button onClick={() => setScreen("select")}>← MODE</button>
-            <button onClick={() => setScreen("portfolio")}>PORTFOLIO</button>
+            <button onClick={() => moveScreen("select")}>← MODE</button>
+            <button onClick={() => moveScreen("portfolio")}>PORTFOLIO</button>
           </nav>
 
           <section className="resume-hero">
@@ -1097,11 +1134,9 @@ function App() {
   return (
       <main className={`page portfolio-page ${battle ? "shake" : ""}`}>
         <nav className="top-bar">
-          <button onClick={() => setScreen("select")}>← MODE</button>
-          <button onClick={() => setScreen("resume")}>RESUME</button>
-          <button onClick={() => document.getElementById("project-zone")?.scrollIntoView({ behavior: "smooth" })}>
-            PROJECTS
-          </button>
+          <button onClick={() => moveScreen("select")}>← MODE</button>
+          <button onClick={() => moveScreen("resume")}>RESUME</button>
+          <button onClick={moveToProjects}>PROJECTS</button>
         </nav>
 
         <section className="hero-section">
