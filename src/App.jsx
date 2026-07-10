@@ -11,6 +11,10 @@ const projectLinks = {
   whisperme: "https://whisper.jkyungsoo.com",
 };
 
+const excelLinks = {
+  tannus: "/excel/포장지시서.xlsx",
+};
+
 const githubLinks = {
   tannus: "https://github.com/BowWowBow/Tannus-MES",
   autoorder: "https://github.com/BowWowBow/Auto-Order",
@@ -44,6 +48,7 @@ const projects = [
     url: projectLinks.tannus,
     github: githubLinks.tannus,
     demo: demoLinks.tannus,
+    excel: excelLinks.tannus,
     accounts: [
       { role: "관리자", id: "admin", pw: "1234" },
       { role: "포장팀", id: "pack", pw: "1234" },
@@ -1241,6 +1246,15 @@ function App() {
                 <p>{selectedProject.summary}</p>
               </div>
               <div className="detail-buttons">
+                {selectedProject.excel && (
+                    <a
+                        className="excel-btn"
+                        href={selectedProject.excel}
+                        download
+                    >
+                      📄 Excel
+                    </a>
+                )}
                 <a
                     className="visit-btn"
                     href={selectedProject.github}
