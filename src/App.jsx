@@ -4,10 +4,10 @@ import profilePhoto from "./assets/profile.jpg";
 import robot from "./assets/robot.png";
 
 const projectLinks = {
-  tannus: "http://43.203.123.217:8080",
-  autoorder: "http://43.203.123.217:8081",
-  toyshop: "http://43.203.123.217:8082",
-  whisperme: "http://43.203.123.217:5173",
+  tannus: "https://mes.jkyungsoo.com",
+  autoorder: "https://auto.jkyungsoo.com",
+  toyshop: "https://toy.jkyungsoo.com",
+  whisperme: "https://whisper.jkyungsoo.com",
 };
 
 const githubLinks = {
@@ -668,16 +668,36 @@ const skillGroups = [
 ];
 
 function App() {
+
   const [screen, setScreen] = useState("intro");
   const [battle, setBattle] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [resumeIndex, setResumeIndex] = useState(0);
 
+  // ⭐ 여기 추가
+  const copyToClipboard = async (text, message) => {
+
+    try {
+
+      await navigator.clipboard.writeText(text);
+
+      alert(message);
+
+    } catch {
+
+      alert("복사에 실패했습니다.");
+
+    }
+
+  };
+
   const startBattle = () => {
     setBattle(true);
     setTimeout(() => setBattle(false), 1700);
     setTimeout(() => {
-      document.getElementById("project-zone")?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById("project-zone")?.scrollIntoView({
+        behavior: "smooth",
+      });
     }, 1200);
   };
 
@@ -1019,11 +1039,56 @@ function App() {
           </section>
 
           <section className="ending">
+
             <p className="section-label">MISSION COMPLETE</p>
+
             <h2>READY FOR NEXT MISSION</h2>
+
             <p>
-              현장을 이해하고 AI를 활용하여 아이디어를 현실의 서비스로 만드는 개발자
+              현장을 이해하고<br />
+              기술로 해결하는 개발자가 되겠습니다.
             </p>
+
+            <div className="contact-card">
+
+              <h3>📬 CONTACT</h3>
+
+              <p
+                  className="contact-copy"
+                  onClick={() =>
+                      copyToClipboard(
+                          "zzangmait1524@gmail.com",
+                          "📧 이메일이 복사되었습니다."
+                      )
+                  }
+              >
+                📧 zzangmait1524@gmail.com
+              </p>
+
+              <p
+                  className="contact-copy"
+                  onClick={() =>
+                      copyToClipboard(
+                          "01072101527",
+                          "📱 전화번호가 복사되었습니다."
+                      )
+                  }
+              >
+                📱 010-7210-1527
+              </p>
+
+              <a
+                  href="https://github.com/BowWowBow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
+                💻 github.com/BowWowBow
+              </a>
+
+              <p>📍 Gimhae, Republic of Korea</p>
+
+            </div>
+
           </section>
         </main>
     );
@@ -1236,10 +1301,56 @@ docker compose up -d --build`}</pre>
         </section>
 
         <section className="ending">
+
           <p className="section-label">GAME CLEAR</p>
+
           <h2>THINK LOAD</h2>
-          <p>사용자의 문제를 이해하고
-            기술로 해결하는 개발자가 되겠습니다.</p>
+
+          <p>
+            사용자의 문제를 이해하고<br />
+            기술로 해결하는 개발자가 되겠습니다.
+          </p>
+
+          <div className="contact-card">
+
+            <h3>📬 CONTACT</h3>
+
+            <p
+                className="contact-copy"
+                onClick={() =>
+                    copyToClipboard(
+                        "zzangmait1524@gmail.com",
+                        "📧 이메일이 복사되었습니다."
+                    )
+                }
+            >
+              📧 zzangmait1524@gmail.com
+            </p>
+
+            <p
+                className="contact-copy"
+                onClick={() =>
+                    copyToClipboard(
+                        "01072101527",
+                        "📱 전화번호가 복사되었습니다."
+                    )
+                }
+            >
+              📱 010-7210-1527
+            </p>
+
+            <a
+                href="https://github.com/BowWowBow"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              💻 github.com/BowWowBow
+            </a>
+
+            <p>📍 Gimhae, Republic of Korea</p>
+
+          </div>
+
         </section>
       </main>
   );
