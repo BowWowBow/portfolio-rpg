@@ -694,6 +694,32 @@ const skillGroups = [
 
 function App() {
 
+  const MAINTENANCE = true;
+
+  if (MAINTENANCE) {
+    return (
+        <div className="maintenance">
+          <div className="maintenance-card">
+
+            <h1>현재는 본업에 집중하고 있습니다.</h1>
+
+            <p>
+              현재 진행 중인 프로젝트와 업무에 집중하고 있어
+              <br />
+              포트폴리오는 잠시 비공개 상태입니다.
+            </p>
+
+            <p className="maintenance-sub">
+              더 좋은 서비스와 프로젝트로 다시 찾아뵙겠습니다.
+              <br />
+              감사합니다.
+            </p>
+
+          </div>
+        </div>
+    );
+  }
+
   const [screen, setScreen] = useState("intro");
   const [battle, setBattle] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
