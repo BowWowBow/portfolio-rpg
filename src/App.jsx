@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import profilePhoto from "./assets/profile.jpg";
-import robot from "./assets/robot.png";
 
 
 const projectLinks = {
@@ -32,15 +31,15 @@ const demoLinks = {
 const projects = [
   {
     id: "tannus",
-    icon: "🏭",
+    icon: "",
     title: "Tannus MES",
 
     badges: [
-      { text: "🏅 개인 실무 프로젝트", class: "badge-work" },
-      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
-      { text: "🟢 AWS 배포", class: "badge-deploy" },
-      { text: "🐳 Docker", class: "badge-docker" },
-      { text: "💻 GitHub", class: "badge-github" },
+      { text: "개인 실무 프로젝트", class: "badge-work" },
+      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "AWS 배포", class: "badge-deploy" },
+      { text: "Docker", class: "badge-docker" },
+      { text: "GitHub", class: "badge-github" },
     ],
 
     type: "제조 / 물류 관리 시스템",
@@ -55,7 +54,7 @@ const projects = [
       { role: "물류팀", id: "logi", pw: "1234" },
     ],
     summary:
-        "🏭 Tannus MES\n" +
+        "Tannus MES\n" +
         "\n" +
         "실제 제조·물류 프로세스를 디지털화한 MES 시스템",
     stacks: ["Java", "Spring Boot", "JSP", "MyBatis", "MySQL", "Docker", "AWS"],
@@ -158,15 +157,15 @@ scanner.render(onScanSuccess);`
   },
   {
     id: "autoorder",
-    icon: "📦",
+    icon: "",
     title: "AutoOrder",
 
     badges: [
-      { text: "🏅 개인 실무 프로젝트", class: "badge-work" },
-      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
-      { text: "🟢 AWS 배포", class: "badge-deploy" },
-      { text: "🐳 Docker", class: "badge-docker" },
-      { text: "💻 GitHub", class: "badge-github" },
+      { text: "개인 실무 프로젝트", class: "badge-work" },
+      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "AWS 배포", class: "badge-deploy" },
+      { text: "Docker", class: "badge-docker" },
+      { text: "GitHub", class: "badge-github" },
     ],
     type: "소매 자동발주 시스템",
     level: 32,
@@ -178,7 +177,7 @@ scanner.render(onScanSuccess);`
       { role: "직원", id: "staff", pw: "1111" },
     ],
     summary:
-        "📦 AutoOrder\n" +
+        "AutoOrder\n" +
         "\n" +
         "재고를 분석하여 자동으로 발주를 생성하는 시스템",
     stacks: ["Java", "Spring Boot", "JSP", "MyBatis", "MySQL", "Scheduler", "Docker", "AWS"],
@@ -255,14 +254,14 @@ public void createAutoOrders() {
   },
   {
     id: "toyshop",
-    icon: "🧸",
+    icon: "",
     title: "ToyShop",
     badges: [
-      { text: "🏅 개인 프로젝트", class: "badge-personal" },
-      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
-      { text: "🟢 AWS 배포", class: "badge-deploy" },
-      { text: "🐳 Docker", class: "badge-docker" },
-      { text: "💻 GitHub", class: "badge-github" },
+      { text: "개인 프로젝트", class: "badge-personal" },
+      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "AWS 배포", class: "badge-deploy" },
+      { text: "Docker", class: "badge-docker" },
+      { text: "GitHub", class: "badge-github" },
     ],
 
     type: "쇼핑몰 프로젝트",
@@ -277,7 +276,7 @@ public void createAutoOrders() {
       { role: "일반회원", id: "staff3", pw: "1234" },
     ],
     summary:
-        "🧸 ToyShop\n" +
+        "ToyShop\n" +
         "\n" +
         "회원부터 결제까지 구현한 쇼핑몰 프로젝트",
     stacks: ["Java", "Spring Boot", "Thymeleaf", "MyBatis", "MySQL", "Toss Payments", "Docker", "AWS"],
@@ -358,15 +357,15 @@ order.setPaymentStatus("PAID");`
   },
   {
     id: "whisperme",
-    icon: "🐳",
+    icon: "",
     title: "WhisperMe",
     badges: [
-      { text: "🏅 개인 프로젝트", class: "badge-personal" },
-      { text: "🖥 모든 기능 사용 가능", class: "badge-service" },
-      { text: "🤖 AI 서비스", class: "badge-ai" },
-      { text: "🟢 AWS 배포", class: "badge-deploy" },
-      { text: "🐳 Docker", class: "badge-docker" },
-      { text: "💻 GitHub", class: "badge-github" },
+      { text: "개인 프로젝트", class: "badge-personal" },
+      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "AI 서비스", class: "badge-ai" },
+      { text: "AWS 배포", class: "badge-deploy" },
+      { text: "Docker", class: "badge-docker" },
+      { text: "GitHub", class: "badge-github" },
     ],
     type: "AI 상담 웹앱",
     level: 35,
@@ -378,7 +377,7 @@ order.setPaymentStatus("PAID");`
       { role: "일반회원", id: "test1", pw: "1234" },
     ],
     summary:
-        "🐳 WhisperMe\n" +
+        "WhisperMe\n" +
         "\n" +
         "OpenAI 기반 AI 상담 및 생산성 웹서비스",
     stacks: ["React", "Spring Boot", "MyBatis", "MySQL", "OpenAI API", "Docker", "AWS"],
@@ -646,37 +645,37 @@ const profileInfo = [
 const skillGroups = [
   {
     title: "Backend",
-    icon: "💻",
+    icon: "",
     items: ["Java", "Spring Boot", "REST API", "MyBatis", "JSP", "Thymeleaf"],
   },
   {
     title: "Frontend",
-    icon: "⚛",
+    icon: "",
     items: ["React", "JavaScript", "HTML5", "CSS3", "Vite"],
   },
   {
     title: "Database",
-    icon: "🗄️",
+    icon: "",
     items: ["MySQL"],
   },
   {
     title: "DevOps",
-    icon: "☁",
+    icon: "",
     items: ["Docker", "AWS EC2", "GitHub"],
   },
   {
     title: "AI",
-    icon: "🤖",
+    icon: "",
     items: ["OpenAI API", "AI-assisted Development", "Prompt Engineering"],
   },
   {
     title: "Tools",
-    icon: "🛠",
+    icon: "",
     items: ["Swagger", "Postman", "IntelliJ", "VS Code"],
   },
   {
     title: "API / Integration",
-    icon: "🔗",
+    icon: "",
     items: [
       "Toss Payments",
       "JavaMailSender",
@@ -692,16 +691,320 @@ const skillGroups = [
   },
 ];
 
+const projectDesigns = {
+  tannus: {
+    goal: "제조·물류 현장에서 포장 지시, 출고, 입고, 재고가 각각 분리되어 발생하던 업무를 하나의 상태 흐름으로 연결하는 것을 목표로 설계했습니다.",
+    requirements: ["관리자·포장팀·물류팀 권한 분리", "QR 기반 작업 수량 확인", "출고 완료 후 입고 대상 자동 연결", "재고와 변경 이력 동시 관리", "수정 요청과 무발주 입고 예외 처리"],
+    erd: [
+      ["포장 지시", "packing_order / packing_order_detail", "포장 지시 헤더와 품목별 상세 수량 분리"],
+      ["수출 지시", "export_order / export_order_detail", "수출 지시 헤더와 품목별 상세 수량 분리"],
+      ["스캔", "packing_*_scan / export_outbound_scan", "지시·상세 단위 QR 작업 기록"],
+      ["재고·예외", "item / stock_history / change_request / unplanned_*", "현재고·변동 이력·수정 및 무계획 작업 관리"],
+    ],
+    entities: [
+      ["PackingOrder", "id, request_date, requested_by, status, completed_at"],
+      ["PackingOrderDetail", "id, packing_order_id, model_name, total_qty, inbound_status"],
+      ["PackingInboundScan", "id, packing_order_id, detail_id, qty, scan_status"],
+      ["PackingOutboundScan", "id, packing_order_id, detail_id, qty, status"],
+      ["PackingChangeRequest", "id, packing_order_id, request_reason, status"],
+      ["ExportOrder", "id, request_date, worker_name, status, stock_applied"],
+      ["ExportOrderDetail", "id, export_order_id, model_name, total_qty, outbound_status"],
+      ["ExportOutboundScan", "id, export_order_id, detail_id, qty, scan_status"],
+      ["ExportChangeRequest", "id, export_order_id, request_reason, status"],
+      ["Item", "id, product_type, model_name, current_qty, location"],
+      ["StockHistory", "id, history_type, model_name, change_qty, after_qty"],
+      ["UnplannedPurchase", "id, packing_order_id, model_name, qty, status"],
+    ],
+    layout: {
+      PackingOrder: [1, 0], PackingOrderDetail: [1, 1], PackingInboundScan: [0, 1],
+      PackingOutboundScan: [2, 1], PackingChangeRequest: [0, 2], UnplannedPurchase: [2, 2],
+      ExportOrder: [1, 3], ExportOrderDetail: [1, 4], ExportOutboundScan: [0, 4],
+      ExportChangeRequest: [2, 4], Item: [0, 5], StockHistory: [2, 5],
+    },
+    relations: [
+      ["PackingOrder", "1 : N", "PackingOrderDetail", "포장 지시별 여러 품목 상세"],
+      ["PackingOrder", "1 : N", "PackingInboundScan", "포장 지시별 입고 스캔"],
+      ["PackingOrder", "1 : N", "PackingOutboundScan", "포장 지시별 출고 스캔"],
+      ["PackingOrder", "1 : N", "PackingChangeRequest", "포장 지시별 수정 요청"],
+      ["PackingOrder", "1 : N", "UnplannedPurchase", "포장 지시별 무계획 입고 요청"],
+      ["ExportOrder", "1 : N", "ExportOrderDetail", "수출 지시별 여러 품목 상세"],
+      ["ExportOrder", "1 : N", "ExportOutboundScan", "수출 지시별 출고 스캔"],
+      ["ExportOrder", "1 : N", "ExportChangeRequest", "수출 지시별 수정 요청"],
+    ],
+    architecture: ["사용자 브라우저", "JSP 화면", "Spring Boot MVC", "Service · MyBatis", "MySQL", "Docker · AWS EC2"],
+    verification: "역할별 계정으로 지시 생성부터 QR 스캔, 출고, 입고 확정, 재고 반영까지 전체 흐름을 반복 검증했습니다.",
+  },
+  autoorder: {
+    goal: "현재고와 최소재고를 기준으로 발주 필요 상품을 찾고, 업체별 발주 일정과 박스 단위를 반영해 실제 사용 가능한 발주 수량을 생성하도록 설계했습니다.",
+    requirements: ["현재고·최소재고 비교", "업체별 발주·입고 요일 관리", "박스 단위 발주 수량 계산", "동일 상품 중복 발주 방지", "입고 완료 시 재고 자동 반영"],
+    erd: [
+      ["업체·상품", "supplier / item", "업체의 일정 정보와 공급 상품·재고 기준 관리"],
+      ["발주", "purchase_order / purchase_order_detail", "업체별 발주서와 상품별 발주 수량 분리"],
+      ["재고 이력", "sale_history / stock_io_history", "판매·입고에 따른 품목별 재고 변동 기록"],
+      ["조정·계정", "stock_adjust_history / user_account", "수동 재고 조정 사유와 사용자 권한 관리"],
+    ],
+    entities: [
+      ["Supplier", "id, supplier_code, supplier_name, order_days, inbound_days"],
+      ["Item", "id, supplier_id, item_name, current_stock, min_stock"],
+      ["PurchaseOrder", "id, supplier_id, order_date, status, created_at"],
+      ["PurchaseOrderDetail", "id, purchase_order_id, item_id, order_qty"],
+      ["SaleHistory", "id, item_id, sale_qty, sale_date"],
+      ["StockIoHistory", "id, item_id, io_type, qty, after_stock"],
+      ["StockAdjustHistory", "id, item_id, before_stock, after_stock, reason"],
+      ["UserAccount", "id, login_id, user_name, role, use_yn"],
+    ],
+    layout: {
+      Supplier: [0, 0], Item: [1, 0], PurchaseOrder: [2, 0],
+      SaleHistory: [0, 1], PurchaseOrderDetail: [1, 1], StockIoHistory: [2, 1],
+      StockAdjustHistory: [1, 2], UserAccount: [2, 2],
+    },
+    relations: [
+      ["Supplier", "1 : N", "Item", "한 업체가 여러 상품을 공급"],
+      ["Supplier", "1 : N", "PurchaseOrder", "한 업체에 여러 발주서가 생성"],
+      ["PurchaseOrder", "1 : N", "PurchaseOrderDetail", "발주서에 여러 상품 상세를 포함"],
+      ["Item", "1 : N", "PurchaseOrderDetail", "상품이 여러 발주 상세에 기록"],
+      ["PurchaseOrder", "N : M", "Item", "purchase_order_detail로 해소된 논리 관계"],
+      ["Item", "1 : N", "SaleHistory", "상품별 판매 이력을 누적"],
+      ["Item", "1 : N", "StockIoHistory", "상품별 입출고 이력을 누적"],
+      ["Item", "1 : N", "StockAdjustHistory", "상품별 수동 조정 이력을 누적"],
+    ],
+    architecture: ["관리자 · 직원", "JSP 화면", "Spring Boot", "자동발주 Scheduler", "MyBatis · MySQL", "Docker · AWS EC2"],
+    verification: "재고 경계값, 발주 단위 올림, 중복 생성, 업체별 요일과 서버 스케줄러 실행 결과를 확인했습니다.",
+  },
+  toyshop: {
+    goal: "회원이 상품을 찾고 주문·결제하는 과정과 관리자가 상품·주문·회원을 운영하는 과정을 하나의 전자상거래 흐름으로 구성했습니다.",
+    requirements: ["회원·배송지 관리", "상품 검색·상세·장바구니", "무통장·카드 결제 상태 분리", "주문 상태 변경과 되돌리기", "마일리지·후기·문의 관리"],
+    erd: [
+      ["회원", "member / address", "회원과 복수 배송지·기본 배송지 관리"],
+      ["상품 활동", "cart / wishlist / recent_product", "회원과 상품의 N:M 관계를 연결 테이블로 해소"],
+      ["주문", "orders / order_detail / product", "주문과 상품의 N:M 관계 및 결제 정보를 orders에 저장"],
+      ["구매 전후", "mileage_history / review / product_qna / inquiry", "적립·후기·상품문의·일반문의 기록"],
+    ],
+    entities: [
+      ["Member", "id, login_id, password, mileage, status"],
+      ["Address", "id, member_id, receiver_name, address, default_yn"],
+      ["Product", "id, product_name, category, price, stock_qty"],
+      ["Cart", "id, member_id, product_id, qty, created_at"],
+      ["Orders", "id, member_id, order_no, final_price, payment_status"],
+      ["OrderDetail", "id, order_id, product_id, price, qty"],
+      ["Wishlist", "id, member_id, product_id, created_at"],
+      ["RecentProduct", "id, member_id, product_id, viewed_at"],
+      ["MileageHistory", "id, member_id, amount, type, created_at"],
+      ["Review", "id, member_id, product_id, rating, content"],
+      ["ProductQna", "id, member_id, product_id, answer_status"],
+      ["Inquiry", "id, member_id, category, title, answer_status"],
+    ],
+    layout: {
+      Member: [1, 0], Address: [0, 0], MileageHistory: [2, 0],
+      Cart: [0, 1], Product: [1, 1], Wishlist: [2, 1],
+      RecentProduct: [0, 2], OrderDetail: [1, 2], Orders: [2, 2],
+      Review: [0, 3], ProductQna: [1, 3], Inquiry: [2, 3],
+    },
+    relations: [
+      ["Member", "1 : N", "Address", "회원별 복수 배송지 관리"],
+      ["Member", "1 : N", "Cart", "회원별 장바구니 항목"],
+      ["Product", "1 : N", "Cart", "상품별 장바구니 포함 이력"],
+      ["Member", "N : M", "Product", "cart·wishlist·recent_product로 해소된 논리 관계"],
+      ["Member", "1 : N", "Orders", "회원별 주문 내역"],
+      ["Orders", "1 : N", "OrderDetail", "주문별 상품 상세"],
+      ["Product", "1 : N", "OrderDetail", "상품별 주문 상세"],
+      ["Orders", "N : M", "Product", "order_detail로 해소된 논리 관계"],
+      ["Member", "1 : N", "Wishlist", "회원별 찜 항목"],
+      ["Product", "1 : N", "Wishlist", "상품별 찜 항목"],
+      ["Member", "1 : N", "RecentProduct", "회원별 최근 본 상품"],
+      ["Product", "1 : N", "RecentProduct", "상품별 최근 조회 기록"],
+      ["Member", "1 : N", "MileageHistory", "회원별 마일리지 이력"],
+      ["Product", "1 : N", "Review", "상품별 후기"],
+      ["Product", "1 : N", "ProductQna", "상품별 문의"],
+    ],
+    architecture: ["사용자 · 관리자", "Thymeleaf 화면", "Spring Boot", "Service · MyBatis", "MySQL", "Toss Payments · Naver SMTP", "Docker · AWS EC2"],
+    verification: "주문 금액과 결제 금액 검증, 결제 방식별 재고 차감, 주문 상태 되돌리기, 기본 배송지와 이미지 예외 처리를 확인했습니다.",
+  },
+  whisperme: {
+    goal: "AI 대화를 중심으로 채팅방, 메시지, 이미지 분석, Todo, 날씨, 음성 입력을 회원별로 사용할 수 있는 서비스 구조를 설계했습니다.",
+    requirements: ["회원별 채팅방과 메시지 이력", "대화 맥락을 포함한 AI 요청", "다중 이미지 업로드와 분석", "오늘·미래·지난 Todo 관리", "React와 Spring Boot 분리 배포"],
+    erd: [
+      ["회원", "Member", "로그인과 사용자 프로필 관리"],
+      ["대화", "ChatRoom / ChatMessage", "회원별 대화방과 USER·ASSISTANT 메시지 관리"],
+      ["첨부", "chat_message.file_*", "메시지 행에 파일명·URL·유형 저장"],
+      ["일정", "Todo", "회원별 일정과 완료 상태 관리"],
+    ],
+    entities: [
+      ["Member", "id, login_id, password, nickname, birth_date"],
+      ["ChatRoom", "id, member_id, title, created_at, deleted_yn"],
+      ["ChatMessage", "id, room_id, role, content, message_type"],
+      ["ChatHistory", "id, member_id, room_id, user_message, ai_message"],
+      ["Todo", "id, member_id, content, todo_date, completed"],
+    ],
+    layout: {
+      Member: [1, 0], ChatHistory: [0, 1], ChatRoom: [1, 1],
+      ChatMessage: [2, 1], Todo: [2, 0],
+    },
+    relations: [
+      ["Member", "1 : N", "ChatRoom", "회원별 여러 대화방 관리"],
+      ["ChatRoom", "1 : N", "ChatMessage", "대화방별 USER·ASSISTANT 메시지 저장"],
+      ["Member", "1 : N", "ChatHistory", "회원별 기존 AI 대화 이력 저장"],
+      ["ChatRoom", "1 : N", "ChatHistory", "대화방별 질의·응답 이력 연결"],
+      ["Member", "1 : N", "Todo", "회원별 일정과 완료 상태 관리"],
+    ],
+    architecture: ["React 브라우저", "Nginx 정적 배포", "Spring Boot REST API", "MyBatis · MySQL", "OpenAI · Naver · Weather API", "Docker · AWS EC2"],
+    verification: "대화방 생성·자동 선택, 대화 이력 저장, 이미지 분석 요청, 모바일 입력창, HTTPS 환경의 API 연결을 확인했습니다.",
+  },
+};
+
+function LogicalErdDiagram({ design }) {
+  const canvasWidth = 1500;
+  const boxWidth = 320;
+  const boxHeight = 122;
+  const diagramRelations = design.relations;
+  const positions = design.entities.map((entity, index) => ({
+    name: entity[0],
+    columns: entity[1].split(",").map((column) => column.trim()),
+    x: 70 + (design.layout?.[entity[0]]?.[0] ?? (index % 3)) * 500,
+    y: 50 + (design.layout?.[entity[0]]?.[1] ?? Math.floor(index / 3)) * 260,
+  }));
+
+  const nodeMap = Object.fromEntries(positions.map((node) => [node.name, node]));
+  const rowCount = Math.max(...positions.map((node) => Math.round((node.y - 50) / 260))) + 1;
+  const canvasHeight = Math.max(500, rowCount * 260 + 70);
+  const routedRelations = diagramRelations.map(([from, cardinality, to], relationIndex) => {
+    const source = nodeMap[from];
+    const target = nodeMap[to];
+    if (!source || !target) return null;
+    const sameTargetRelations = diagramRelations.filter((relation) => relation[2] === to);
+    const targetRelationIndex = sameTargetRelations.findIndex(
+        (relation) => relation[0] === from && relation[1] === cardinality
+    );
+    const targetOffset = (targetRelationIndex - (sameTargetRelations.length - 1) / 2) * 40;
+    const sameRow = source.y === target.y;
+    const longHorizontal = sameRow && Math.abs(target.x - source.x) > 500;
+    const horizontal = !longHorizontal && Math.abs(target.x - source.x) >= Math.abs(target.y - source.y);
+    const laneOffset = ((relationIndex % 5) - 2) * 16;
+    if (longHorizontal) {
+      const sourceX = source.x + boxWidth / 2;
+      const targetX = target.x + boxWidth / 2;
+      const edgeY = source.y + boxHeight;
+      const channelY = edgeY + 58 + laneOffset;
+      return {
+        key: `${from}-${cardinality}-${to}`,
+        cardinality,
+        route: `M ${sourceX} ${edgeY} V ${channelY} H ${targetX} V ${edgeY}`,
+        labelX: targetX + targetOffset,
+        labelY: edgeY + 42,
+      };
+    }
+    const x1 = horizontal ? source.x + (target.x > source.x ? boxWidth : 0) : source.x + boxWidth / 2;
+    const y1 = horizontal ? source.y + boxHeight / 2 : source.y + (target.y > source.y ? boxHeight : 0);
+    const x2 = horizontal ? target.x + (target.x > source.x ? 0 : boxWidth) : target.x + boxWidth / 2;
+    const y2 = horizontal ? target.y + boxHeight / 2 : target.y + (target.y > source.y ? 0 : boxHeight);
+    const midX = (x1 + x2) / 2;
+    const midY = (y1 + y2) / 2;
+    const directionY = y2 >= y1 ? 1 : -1;
+    const directionX = x2 >= x1 ? 1 : -1;
+    return {
+      key: `${from}-${cardinality}-${to}`,
+      cardinality,
+      route: horizontal
+          ? `M ${x1} ${y1} H ${midX + laneOffset} V ${y2} H ${x2}`
+          : `M ${x1} ${y1} V ${midY + laneOffset} H ${x2} V ${y2}`,
+      labelX: horizontal ? x2 - directionX * 58 : x2 + targetOffset,
+      labelY: horizontal ? y2 + targetOffset : y2 - directionY * 62,
+    };
+  }).filter(Boolean);
+
+  return (
+      <div className="erd-visual-wrap" aria-label="논리 ERD 관계도">
+        <svg
+            className="erd-visual"
+            viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
+            role="img"
+            aria-label="테이블과 관계선을 표시한 논리 ERD"
+        >
+          <g className="erd-connectors">
+            {routedRelations.map((relation) => (
+                <path key={`${relation.key}-line`} d={relation.route} />
+            ))}
+          </g>
+
+          <g className="erd-relation-labels">
+            {routedRelations.map((relation) => (
+                <g key={`${relation.key}-label`}>
+                  <rect
+                      className="erd-relation-label-bg"
+                      x={relation.labelX - 31}
+                      y={relation.labelY - 14}
+                      width="62"
+                      height="28"
+                      rx="3"
+                  />
+                  <text
+                      className="erd-relation-label"
+                      x={relation.labelX}
+                      y={relation.labelY + 4}
+                      textAnchor="middle"
+                  >
+                    {relation.cardinality}
+                  </text>
+                </g>
+            ))}
+          </g>
+
+          <g className="erd-nodes">
+            {positions.map((node) => (
+                <g key={node.name} transform={`translate(${node.x} ${node.y})`}>
+                  <rect className="erd-node-body" width={boxWidth} height={boxHeight} rx="3" />
+                  <rect className="erd-node-head" width={boxWidth} height="34" rx="3" />
+                  <text className="erd-node-title" x="14" y="23">{node.name}</text>
+                  {node.columns.slice(0, 5).map((column, columnIndex) => (
+                      <text
+                          className="erd-node-column"
+                          x="15"
+                          y={54 + columnIndex * 14}
+                          key={column}
+                      >
+                        {columnIndex === 0 ? "PK  " : "     "}{column}
+                      </text>
+                  ))}
+                </g>
+            ))}
+          </g>
+        </svg>
+        <p className="erd-visual-note">
+          관계선 가운데의 1:N·N:M 표기는 테이블 사이의 물리적·논리적 관계를 나타냅니다.
+        </p>
+      </div>
+  );
+}
+
 function App() {
 
-  const MAINTENANCE = true;
+  const secretResumeMode = window.location.hash === "#resume";
+  const MAINTENANCE = !secretResumeMode;
 
   if (MAINTENANCE) {
     return (
         <div className="maintenance">
           <div className="maintenance-card">
 
-            <h1>현재는 본업에 집중하고 있습니다.</h1>
+            <div className="maintenance-title-row">
+              <h1
+                  className="secret-resume-title"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => {
+                    window.location.hash = "resume";
+                    window.location.reload();
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      window.location.hash = "resume";
+                      window.location.reload();
+                    }
+                  }}
+              >
+                현재는 본업에 집중하고 있습니다.
+              </h1>
+            </div>
 
             <p>
               현재 진행 중인 프로젝트와 업무에 집중하고 있어
@@ -720,7 +1023,7 @@ function App() {
     );
   }
 
-  const [screen, setScreen] = useState("intro");
+  const [screen, setScreen] = useState(secretResumeMode ? "select" : "intro");
   const [battle, setBattle] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [resumeIndex, setResumeIndex] = useState(0);
@@ -796,12 +1099,12 @@ function App() {
           <div className="intro-gate gate-right"></div>
 
           <section className="intro-box">
-            <p className="pixel-small">DEVELOPER QUEST</p>
+            <p className="pixel-small">DEVELOPER PORTFOLIO</p>
             <h1>Full Stack Developer</h1>
             <h2>JUNG KYUNG SU</h2>
-            <p className="intro-sub">AI를 활용해 아이디어를 현실의 서비스로 만드는 개발자</p>
+            <p className="intro-sub">현장을 이해하고 서비스를 완성하는 개발자</p>
             <button className="press-start" onClick={() => setScreen("select")}>
-              PRESS START
+              포트폴리오 열기
             </button>
           </section>
         </main>
@@ -813,8 +1116,8 @@ function App() {
         <main className="select-screen">
           <div className="stars"></div>
           <section className="select-wrap">
-            <p className="pixel-small">⚔ PROJECT MODE</p>
-            <h1>SELECT MODE</h1>
+            <p className="pixel-small">DOCUMENT</p>
+            <h1>자료 선택</h1>
             <div className="mode-grid">
               <button
                   type="button"
@@ -824,10 +1127,10 @@ function App() {
                     setScreen("portfolio");
                   }}
               >
-                <span className="mode-icon">⚔</span>
+                <span className="mode-icon">01</span>
                 <strong>PORTFOLIO</strong>
-                <p>프로젝트, 기능, 트러블슈팅, 배포 과정을 탐험합니다.</p>
-                <em>ENTER</em>
+                <p>프로젝트의 설계, 기능, 구현, 문제 해결과 배포 과정을 확인합니다.</p>
+                <em>열기</em>
               </button>
 
               <button
@@ -838,10 +1141,10 @@ function App() {
                     setScreen("resume");
                   }}
               >
-                <span className="mode-icon">📜</span>
+                <span className="mode-icon">02</span>
                 <strong>RESUME</strong>
                 <p>자기소개, 경력, 기술스택, 성장 방향을 확인합니다.</p>
-                <em>ENTER</em>
+                <em>열기</em>
               </button>
             </div>
           </section>
@@ -855,7 +1158,7 @@ function App() {
     return (
         <main className="page resume-page">
           <nav className="top-bar">
-            <button onClick={() => moveScreen("select")}>← MODE</button>
+            <button onClick={() => moveScreen("select")}>MODE</button>
             <button onClick={() => moveScreen("portfolio")}>PORTFOLIO</button>
           </nav>
 
@@ -864,9 +1167,9 @@ function App() {
               <div className="profile-photo-wrap">
                 <img src={profilePhoto} alt="정경수 프로필 사진" className="profile-photo" />
               </div>
-              <p className="level-badge">LV.35</p>
+              <p className="level-badge">PROFILE</p>
               <h1>JEONG KYUNGSOO</h1>
-              <span className="job-title">AI-Assisted Full Stack Developer</span>
+              <span className="job-title">Full Stack Developer</span>
 
               <div className="profile-info">
                 {profileInfo.map((item) => (
@@ -916,28 +1219,28 @@ function App() {
   </span>
 
                 <button onClick={() => setResumeIndex((resumeIndex + 1) % resumeSections.length)}>
-                  NEXT ▶
+                  NEXT
                 </button>
               </div>
             </div>
           </section>
 
           <section className="resume-section">
-            <p className="section-label">PLAYER STATUS</p>
+            <p className="section-label">CORE COMPETENCIES</p>
             <h2>실무 경험 기반 역량</h2>
 
             <div className="status-board">
               {[
-                ["🏭 Manufacturing", "★★★★★", "full"],
-                ["📦 Logistics", "★★★★★", "full"],
+                ["Manufacturing", "11년 현장 경험", "full"],
+                ["Logistics", "11년 현장 경험", "full"],
 
-                ["💻 Spring Boot", "★★★☆☆", "sixty"],
+                ["Spring Boot", "프로젝트 적용", "sixty"],
 
-                ["⚛ React", "★★☆☆☆", "forty"],
+                ["React", "프로젝트 적용", "forty"],
 
-                ["☁ Docker · AWS", "★★★☆☆", "sixty"],
+                ["Docker · AWS", "배포 경험", "sixty"],
 
-                ["🤖 AI Development", "★★★★☆", "eighty"],
+                ["AI Development", "API 활용", "eighty"],
               ].map(([name, star, level]) => (
                   <div className="status-row" key={name}>
                     <span>{name}</span>
@@ -960,7 +1263,6 @@ function App() {
               {skillGroups.map((group) => (
                   <article className="skill-category-card" key={group.title}>
                     <h3>
-                      <span>{group.icon}</span>
                       {group.title}
                     </h3>
 
@@ -1006,7 +1308,7 @@ function App() {
             </div>
 
             <div className="k-digital-line">
-              <strong>🎓 K-디지털 트레이닝 6개월 과정</strong>
+              <strong>K-디지털 트레이닝 6개월 과정</strong>
               <span>2024.08 ~2025.02</span>
               <em>Java · python · Spring Boot · MySQL</em>
             </div>
@@ -1049,68 +1351,68 @@ function App() {
             <div className="certificate-list">
               {[
                 {
-                  icon: "📊",
+                  icon: "",
                   title: "데이터분석준전문가(ADsP)",
                   org: "한국데이터산업진흥원(K-DATA)",
                   date: "2026.03",
                   major: true,
                 },
                 {
-                  icon:"🗄️",
+                  icon:"",
                   title:"SQL 개발자(SQLD)",
                   org:"한국데이터산업진흥원",
                   date:"2025.12",
                   major:true,
                 },
-                { icon: "🚜", title: "지게차운전기능사", org: "한국산업인력공단", date: "2025.12" },
+                { icon: "", title: "지게차운전기능사", org: "한국산업인력공단", date: "2025.12" },
                 {
-                  icon:"🐧",
+                  icon:"",
                   title:"리눅스마스터 2급",
                   org:"한국정보통신인재개발센터",
                   date:"2025.10",
                   major:true,
                 },
-                { icon: "💻", title: "정보처리기사(필기) 실기 7월 시험 예정", org: "한국산업인력공단", date: "2025.05",major:true, },
+                { icon: "", title: "정보처리기사(필기) 실기 7월 시험 예정", org: "한국산업인력공단", date: "2025.05",major:true, },
                 {
-                  icon:"🇯🇵",
+                  icon:"",
                   title:"JLPT N4",
                   org:"N4 취득",
                   date:"2024.12",
-                  major:true,
+                  major:false,
                 },
-                { icon: "🪟", title: "MOS Master", org: "Microsoft", date: "2014.04" },
-                { icon: "🏅", title: "학생 포트폴리오경진대회 장려상", org: "창원대학교 공학교육혁신센터", date: "2013.06" },
+                { icon: "", title: "MOS Master", org: "Microsoft", date: "2014.04", major:false },
+                { icon: "", title: "학생 포트폴리오경진대회 장려상", org: "창원대학교 공학교육혁신센터", date: "2013.06" },
                 {
-                  icon: "⌨️",
+                  icon: "",
                   title: "워드프로세서 1급",
                   org: "대한상공회의소",
                   date: "2013.05",
                 },
                 {
-                  icon: "🇰🇷",
+                  icon: "",
                   title: "한자능력검정 3급",
                   org: "한국어문회",
                   date: "2012.10",
                 },
                 {
-                  icon: "🚓",
+                  icon: "",
                   title: "1종 보통운전면허",
                   org: "경찰청(운전면허시험관리단)",
                   date: "2010.07",
                 },
                 {
-                  icon: "🤝",
+                  icon: "",
                   title: "로타랙트 클럽 표창장",
                   org: "국제로타리",
                   date: "2010.04",
                 },
 
-              ].map((c) => (
+              ].map((c, index) => (
                   <article
                       className={`cert-card ${c.major ? "major-cert" : ""}`}
                       key={c.title}
                   >
-                    <div className="cert-icon">{c.icon}</div>
+                    <div className="cert-icon">{String(index + 1).padStart(2, "0")}</div>
 
                     <div className="cert-info">
                       <h3>
@@ -1144,18 +1446,18 @@ function App() {
 
             <div className="contact-card">
 
-              <h3>📬 CONTACT</h3>
+              <h3>CONTACT</h3>
 
               <p
                   className="contact-copy"
                   onClick={() =>
                       copyToClipboard(
                           "zzangmait1524@gmail.com",
-                          "📧 이메일이 복사되었습니다."
+                          "이메일이 복사되었습니다."
                       )
                   }
               >
-                📧 zzangmait1524@gmail.com
+                zzangmait1524@gmail.com
               </p>
 
               <p
@@ -1163,11 +1465,11 @@ function App() {
                   onClick={() =>
                       copyToClipboard(
                           "01072101527",
-                          "📱 전화번호가 복사되었습니다."
+                          "전화번호가 복사되었습니다."
                       )
                   }
               >
-                📱 010-7210-1527
+                010-7210-1527
               </p>
 
               <a
@@ -1175,10 +1477,10 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
               >
-                💻 github.com/BowWowBow
+                github.com/BowWowBow
               </a>
 
-              <p>📍 Gimhae, Republic of Korea</p>
+              <p>Gimhae, Republic of Korea</p>
 
             </div>
 
@@ -1190,48 +1492,41 @@ function App() {
   return (
       <main className={`page portfolio-page ${battle ? "shake" : ""}`}>
         <nav className="top-bar">
-          <button onClick={() => moveScreen("select")}>← MODE</button>
+          <button onClick={() => moveScreen("select")}>MODE</button>
           <button onClick={() => moveScreen("resume")}>RESUME</button>
           <button onClick={moveToProjects}>PROJECTS</button>
         </nav>
 
         <section className="hero-section">
-          <div className={`battle-stage ${battle ? "battle-on" : ""}`}>
-            <div className="bug">🐞</div>
-            <div className="impact impact-a">💥</div>
-            <div className="impact impact-b">⚡</div>
+          <div className={`battle-stage ${battle ? "battle-on" : ""}`} aria-hidden="true">
+            <div className="bug"></div>
+            <div className="impact impact-a"></div>
+            <div className="impact impact-b"></div>
             <div className="slash"></div>
-
-            <div className="hero-character">
-              <img src={robot} alt="AI Robot" className="robot-image" />
-            </div>
 
             <div className="battle-text">BUG FIX!</div>
           </div>
 
           <div className="hero-copy">
-            <p className="section-label">DEVELOPER QUEST</p>
+            <p className="section-label">PORTFOLIO</p>
             <h1>
-              AI-Assisted
-              <br />
               Full Stack Developer
             </h1>
-            <h2>AI를 활용해 아이디어를 현실의 서비스로 만드는 개발자</h2>
+            <h2>현장을 이해하고 서비스를 완성하는 개발자</h2>
             <p>
               현장에서 얻은 경험을 바탕으로 실제 업무의 문제를 서비스로 구현합니다.
-              AI를 개발 도구로 활용하여 아이디어를 빠르게 검증하고,
               프론트엔드, 백엔드, 데이터베이스, Docker, AWS 배포까지 직접 경험했습니다.
             </p>
             <div className="hero-buttons">
-              <button className="main-btn" onClick={startBattle}>
-                👊 START ACTION
+              <button className="main-btn" onClick={moveToProjects}>
+                프로젝트 보기
               </button>
             </div>
           </div>
         </section>
 
         <section className="project-zone" id="project-zone">
-          <p className="section-label">PROJECT DUNGEON</p>
+          <p className="section-label">PROJECTS</p>
           <h2>실제 경험을 서비스로 구현한 프로젝트</h2>
 
           <div className="project-grid">
@@ -1262,7 +1557,7 @@ function App() {
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                   >
-                    홈페이지 이동 ↗
+                    홈페이지 이동
                   </a>
                 </article>
             ))}
@@ -1273,7 +1568,7 @@ function App() {
               <div>
                 <p className="section-label">Project</p>
                 <h2>
-                  {selectedProject.icon} {selectedProject.title}
+                  {selectedProject.title}
                 </h2>
                 <p>{selectedProject.summary}</p>
               </div>
@@ -1284,7 +1579,7 @@ function App() {
                         href={selectedProject.excel}
                         download
                     >
-                      📄 Excel
+                      Excel
                     </a>
                 )}
                 <a
@@ -1293,7 +1588,7 @@ function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                  📖README ↗
+                  README
                 </a>
 
                 <a
@@ -1302,7 +1597,7 @@ function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                  🎥DEMO ▶
+                  DEMO
                 </a>
               </div>
             </div>
@@ -1320,7 +1615,7 @@ function App() {
                     href="/downloads/포트폴리오.pdf"
                     download="포트폴리오.pdf"
                 >
-                  <b>📘</b>
+                  <b>PDF</b>
                   <span>
                     <small>PORTFOLIO PDF</small>
                     포트폴리오 다운로드
@@ -1332,7 +1627,7 @@ function App() {
                     href="/downloads/자기소개서.pdf"
                     download="자기소개서.pdf"
                 >
-                  <b>📄</b>
+                  <b>PDF</b>
                   <span>
                     <small>RESUME PDF</small>
                     자기소개서 다운로드
@@ -1343,7 +1638,7 @@ function App() {
 
             <div className="account-card">
 
-              <h3>🧪 Demo Account</h3>
+              <h3>Demo Account</h3>
 
               {(selectedProject.accounts ?? []).map((account) => (
 
@@ -1363,7 +1658,7 @@ function App() {
                   selectedProject.id === "whisperme") && (
 
                   <p className="join-text">
-                    ✅ 회원가입도 가능합니다.
+                    회원가입도 가능합니다.
                   </p>
 
               )}
@@ -1398,6 +1693,77 @@ function App() {
                         {index < (selectedProject.flow ?? []).length - 1 && <b>→</b>}
                       </div>
                   ))}
+                </div>
+              </article>
+
+              <article className="wide design-stage-section">
+                <h3>프로젝트 설계 단계</h3>
+                <div className="design-steps">
+                  <section>
+                    <span>01</span>
+                    <h4>문제 정의</h4>
+                    <p>{projectDesigns[selectedProject.id].goal}</p>
+                  </section>
+                  <section>
+                    <span>02</span>
+                    <h4>요구사항 정리</h4>
+                    <ul>
+                      {projectDesigns[selectedProject.id].requirements.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </section>
+                  <section>
+                    <span>03</span>
+                    <h4>ERD · 데이터 설계</h4>
+                    <div className="erd-design-table">
+                      {projectDesigns[selectedProject.id].erd.map(([domain, entities, description]) => (
+                          <div key={domain}>
+                            <strong>{domain}</strong>
+                            <code>{entities}</code>
+                            <p>{description}</p>
+                          </div>
+                      ))}
+                    </div>
+
+                    <h5>논리 ERD · 핵심 엔터티</h5>
+                    <LogicalErdDiagram design={projectDesigns[selectedProject.id]} />
+                    <div className="erd-entity-grid">
+                      {projectDesigns[selectedProject.id].entities.map(([name, columns]) => (
+                          <article className="erd-entity" key={name}>
+                            <strong>{name}</strong>
+                            <code>{columns}</code>
+                          </article>
+                      ))}
+                    </div>
+
+                    <h5>테이블 관계</h5>
+                    <div className="erd-relation-list">
+                      {projectDesigns[selectedProject.id].relations.map(([from, cardinality, to, description]) => (
+                          <div className="erd-relation" key={`${from}-${to}`}>
+                            <strong>{from}</strong>
+                            <span>{cardinality}</span>
+                            <strong>{to}</strong>
+                            <p>{description}</p>
+                          </div>
+                      ))}
+                    </div>
+                  </section>
+                  <section>
+                    <span>04</span>
+                    <h4>전체 시스템 구조</h4>
+                    <div className="architecture-diagram">
+                      {projectDesigns[selectedProject.id].architecture.map((layer, index) => (
+                          <div className="architecture-node" key={layer}>
+                            <strong>{layer}</strong>
+                            {index < projectDesigns[selectedProject.id].architecture.length - 1 && <span>→</span>}
+                          </div>
+                      ))}
+                    </div>
+                  </section>
+                  <section>
+                    <span>05</span>
+                    <h4>구현 및 검증</h4>
+                    <p>{projectDesigns[selectedProject.id].verification}</p>
+                  </section>
                 </div>
               </article>
 
@@ -1465,9 +1831,9 @@ docker compose up -d --build`}</pre>
 
         <section className="ending">
 
-          <p className="section-label">GAME CLEAR</p>
+          <p className="section-label">CONTACT</p>
 
-          <h2>THINK LOAD</h2>
+          <h2>현장을 이해하고 기술로 해결하겠습니다.</h2>
 
           <p>
             사용자의 문제를 이해하고<br />
@@ -1476,18 +1842,18 @@ docker compose up -d --build`}</pre>
 
           <div className="contact-card">
 
-            <h3>📬 CONTACT</h3>
+            <h3>CONTACT</h3>
 
             <p
                 className="contact-copy"
                 onClick={() =>
                     copyToClipboard(
                         "zzangmait1524@gmail.com",
-                        "📧 이메일이 복사되었습니다."
+                        "이메일이 복사되었습니다."
                     )
                 }
             >
-              📧 zzangmait1524@gmail.com
+              zzangmait1524@gmail.com
             </p>
 
             <p
@@ -1495,11 +1861,11 @@ docker compose up -d --build`}</pre>
                 onClick={() =>
                     copyToClipboard(
                         "01072101527",
-                        "📱 전화번호가 복사되었습니다."
+                        "전화번호가 복사되었습니다."
                     )
                 }
             >
-              📱 010-7210-1527
+              010-7210-1527
             </p>
 
             <a
@@ -1507,10 +1873,10 @@ docker compose up -d --build`}</pre>
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              💻 github.com/BowWowBow
+              github.com/BowWowBow
             </a>
 
-            <p>📍 Gimhae, Republic of Korea</p>
+            <p>Gimhae, Republic of Korea</p>
 
           </div>
 
