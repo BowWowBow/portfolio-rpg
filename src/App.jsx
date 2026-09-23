@@ -35,8 +35,8 @@ const projects = [
     title: "Tannus MES",
 
     badges: [
-      { text: "개인 실무 프로젝트", class: "badge-work" },
-      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "현장 경험 기반 개인 프로젝트", class: "badge-work" },
+      { text: "데모 계정 제공", class: "badge-service" },
       { text: "AWS 배포", class: "badge-deploy" },
       { text: "Docker", class: "badge-docker" },
       { text: "GitHub", class: "badge-github" },
@@ -48,6 +48,7 @@ const projects = [
     github: githubLinks.tannus,
     demo: demoLinks.tannus,
     excel: excelLinks.tannus,
+    meta: ["개인 개발", "기획·DB·백엔드·화면·배포 담당", "AWS EC2 배포"],
     accounts: [
       { role: "관리자", id: "admin", pw: "1234" },
       { role: "포장팀", id: "pack", pw: "1234" },
@@ -161,8 +162,8 @@ scanner.render(onScanSuccess);`
     title: "AutoOrder",
 
     badges: [
-      { text: "개인 실무 프로젝트", class: "badge-work" },
-      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "현장 경험 기반 개인 프로젝트", class: "badge-work" },
+      { text: "데모 계정 제공", class: "badge-service" },
       { text: "AWS 배포", class: "badge-deploy" },
       { text: "Docker", class: "badge-docker" },
       { text: "GitHub", class: "badge-github" },
@@ -172,6 +173,7 @@ scanner.render(onScanSuccess);`
     url: projectLinks.autoorder,
     github: githubLinks.autoorder,
     demo: demoLinks.autoorder,
+    meta: ["개인 개발", "기획·DB·백엔드·화면·배포 담당", "AWS EC2 배포"],
     accounts: [
       { role: "관리자", id: "admin", pw: "1234" },
       { role: "직원", id: "staff", pw: "1111" },
@@ -258,7 +260,7 @@ public void createAutoOrders() {
     title: "ToyShop",
     badges: [
       { text: "개인 프로젝트", class: "badge-personal" },
-      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "데모 계정 제공", class: "badge-service" },
       { text: "AWS 배포", class: "badge-deploy" },
       { text: "Docker", class: "badge-docker" },
       { text: "GitHub", class: "badge-github" },
@@ -269,6 +271,7 @@ public void createAutoOrders() {
     url: projectLinks.toyshop,
     github: githubLinks.toyshop,
     demo: demoLinks.toyshop,
+    meta: ["개인 개발", "기획·DB·백엔드·화면·배포 담당", "AWS EC2 배포"],
     accounts: [
       { role: "관리자", id: "admin", pw: "1234" },
       { role: "일반회원", id: "staff1", pw: "1234" },
@@ -361,7 +364,7 @@ order.setPaymentStatus("PAID");`
     title: "WhisperMe",
     badges: [
       { text: "개인 프로젝트", class: "badge-personal" },
-      { text: "모든 기능 사용 가능", class: "badge-service" },
+      { text: "데모 계정 제공", class: "badge-service" },
       { text: "AI 서비스", class: "badge-ai" },
       { text: "AWS 배포", class: "badge-deploy" },
       { text: "Docker", class: "badge-docker" },
@@ -372,6 +375,7 @@ order.setPaymentStatus("PAID");`
     url: projectLinks.whisperme,
     github: githubLinks.whisperme,
     demo: demoLinks.whisperme,
+    meta: ["개인 개발", "React·Spring Boot 분리 구현", "AWS EC2 배포"],
     accounts: [
       { role: "일반회원", id: "test", pw: "1234" },
       { role: "일반회원", id: "test1", pw: "1234" },
@@ -459,7 +463,166 @@ recognition.start();`
       },
     ],
   },
+  {
+    id: "aboutj", icon: "", title: "About J",
+    badges: [{ text: "개인 프로젝트", class: "badge-work" }, { text: "콘텐츠 웹서비스", class: "badge-service" }],
+    type: "영상 콘텐츠 탐색 · AI Shorts 제작 서비스", level: 20,
+    url: "http://about.jkyungsoo.com/", github: null, demo: null,
+    meta: ["개인 개발", "콘텐츠 제작·검색·시청", "AWS 배포 경험"],
+    accounts: [{ role: "관리자", id: "admin", pw: "aboutj1234!" }, { role: "일반", id: "zzangmait@naver.com", pw: "aboutj1234!" }],
+    summary: "About J\n\n영상 콘텐츠 탐색·시청과 AI 기반 Shorts 제작·YouTube 업로드 흐름을 연결한 웹서비스",
+    stacks: ["Java", "Spring Boot", "Thymeleaf", "MySQL", "OpenAI API", "Gemini API", "Pexels API", "YouTube Data API", "AWS"],
+    features: ["영상 콘텐츠 검색·시청 화면", "관리자·일반 사용자 인증", "AI 기반 콘텐츠 생성", "이미지 검색·소재 수집", "Shorts 결과물 제작", "YouTube OAuth 연동 업로드", "개발·운영 환경설정 분리"],
+    flow: ["로그인·콘텐츠 탐색", "주제 선택", "AI 콘텐츠 생성", "이미지 소재 수집", "Shorts 제작", "YouTube 업로드·이력"],
+    codes: [],
+    integrations: [
+      { title: "OpenAI · Gemini", desc: "주제 기반 AI 콘텐츠 생성 단계에 사용하는 외부 서비스입니다.", code: "주제 입력 → 생성 요청 → 생성 결과 확인\n※ 기능 흐름 개요 · 원본 코드 아님" },
+      { title: "Pexels 이미지 API", desc: "Shorts 제작에 필요한 이미지 소재 검색·수집에 사용합니다.", code: "검색어 → 이미지 API → 소재 선택\n※ 기능 흐름 개요 · 원본 코드 아님" },
+      { title: "YouTube Data API · OAuth", desc: "인증과 Shorts 업로드 및 업로드 결과 확인 흐름을 분리합니다.", code: "OAuth 인증 → 영상 업로드 → 결과·이력 확인\n※ 기능 흐름 개요 · 원본 코드 아님" },
+    ],
+    troubleshooting: [
+      { title: "로컬·운영 설정 분리", problem: "로컬 프로필이 지정되지 않아 환경변수 오류가 발생했습니다.", solve: "application-local과 운영 환경변수를 분리해 설정을 정리했습니다." },
+      { title: "외부 API 환경변수", problem: "DB_URL이나 API Key에 placeholder가 남으면 외부 연동이 실패했습니다.", solve: "개발·운영 설정의 변수와 API 키 입력 지점을 분리해 점검했습니다." },
+      { title: "YouTube OAuth 설정", problem: "로컬과 서버에서 인증 토큰·환경설정 경로가 달라질 수 있습니다.", solve: "OAuth 토큰과 운영 환경 설정을 분리해 관리하도록 정리했습니다." },
+    ],
+  },
 ];
+
+const otherProjects = [
+  {
+    category: "APP",
+    title: "JKS MAKER",
+    description: "AI 음악 생성·편집과 보컬 분리를 지원하는 제작 앱",
+    stacks: ["Flutter", "FastAPI", "Python", "AI Audio"],
+    dataDesign: "Project · GenerationHistory · AudioFile",
+  },
+  {
+    category: "APP",
+    title: "스다스 작업관리",
+    description: "물량에 따른 공정 인원·시간·급여를 계산하는 현장 작업관리 앱",
+    stacks: ["Flutter", "SQLite", "Timeline"],
+    dataDesign: "Worker · Process · Assignment · WorkLog",
+  },
+  {
+    category: "APP",
+    title: "JoWalking",
+    description: "GPS와 걸음 센서로 일상·운동 경로와 기간별 통계를 기록하는 앱",
+    stacks: ["Flutter", "GPS", "Mapbox", "Supabase"],
+    dataDesign: "WalkingSession · RoutePoint · DailyStat",
+  },
+  {
+    category: "APP",
+    title: "TranSu",
+    description: "현재 위치 기반 주변 버스정류장 검색과 API 장애 대응을 적용한 앱",
+    stacks: ["Flutter", "공공데이터 API", "GPS", "Cache"],
+    dataDesign: "StopCache · FavoriteStop · SearchHistory",
+  },
+  {
+    category: "APP",
+    title: "J-Battery",
+    description: "캐릭터·배경·배터리 상태를 조합해 홈과 잠금화면을 꾸미는 앱",
+    stacks: ["Flutter", "Android", "Kotlin", "Local Storage"],
+    dataDesign: "HomeConfig · LockConfig · AssetPreference",
+  },
+  {
+    category: "APP",
+    title: "World Radio",
+    description: "전 세계 인터넷 라디오를 국가·장르별로 찾고 실시간 재생하는 앱",
+    stacks: ["Flutter", "Radio API", "Audio", "Local Storage"],
+    dataDesign: "Station · Favorite · ListenHistory · Cache",
+  },
+];
+
+
+// 모바일 앱의 데이터 모델은 포트폴리오 설명용 논리 설계입니다. 실제 DB 테이블 구현과 동일하다고 단정하지 않습니다.
+const appCaseStudies = {
+  "JKS MAKER": {
+    goal: "음악 제작에 필요한 생성·편집·파일 관리를 모바일 화면에서 이어 사용하는 것을 목표로 구성했습니다.",
+    requirements: ["음원 생성·편집 작업 분리", "보컬 분리 등 오디오 작업", "작업 결과 파일 관리", "작업 단계별 진행 결과 확인"],
+    flow: ["프로젝트 선택", "음원 생성·불러오기", "편집·오디오 처리", "결과 확인", "파일 저장"],
+    entities: [["Project", "id, name, created_at"], ["GenerationHistory", "id, project_id, task_type, status"], ["AudioFile", "id, project_id, file_path, file_type"]],
+    layout: { Project: [1, 0], GenerationHistory: [0, 1], AudioFile: [2, 1] },
+    relations: [["Project", "1 : N", "GenerationHistory", "프로젝트별 음원 작업 기록"], ["Project", "1 : N", "AudioFile", "프로젝트에 속한 결과 음원"]],
+    diagramGroups: [{ title: "프로젝트·파일 흐름", entities: ["Project", "GenerationHistory", "AudioFile"], relationIndexes: [0, 1], layout: { Project: [1, 0], GenerationHistory: [0, 1], AudioFile: [2, 1] }, labelOffsets: { 0: [-72, 0], 1: [72, 0] } }],
+    architecture: ["Flutter UI", "오디오 작업 요청", "FastAPI · Python", "AI Audio 처리", "결과 파일"],
+    verification: "음원 처리 요청·결과 표시·파일 저장 등 사용자 흐름을 중심으로 점검하는 프로젝트입니다.",
+    challenges: [["작업의 단계 구분", "음원 생성, 편집, 결과 저장은 서로 다른 단계입니다.", "작업 단계와 결과 파일을 분리하여 흐름을 설명했습니다."], ["파일 추적", "여러 결과물이 발생하면 출처를 파악하기 어렵습니다.", "프로젝트-작업기록-파일의 논리 관계를 정리했습니다."]],
+  },
+  "스다스 작업관리": {
+    goal: "택배 물량에 맞춰 공정별 작업 인원과 시간을 배정하고, 작업자별 일정과 예상 임금을 한 화면에서 확인하도록 기획했습니다.",
+    requirements: ["공정별 작업량·기준 시간 입력", "기준에 따른 인원 비례 계산", "작업자별 시작 시간·점심·휴식 배치", "중복 배정 방지 및 분할 작업", "기본 시급과 잔업 1.5배 계산", "관리자 승인과 진행 상태 확인"],
+    flow: ["물량·공정 등록", "작업자 선택", "인원·시간 배정", "타임라인 확인", "승인·완료"],
+    entities: [["Worker", "id, name, hourly_wage"], ["Process", "id, name, standard_qty, standard_time"], ["Assignment", "id, worker_id, process_id, start_at, end_at"], ["WorkLog", "id, assignment_id, status, approved_at"]],
+    layout: { Worker: [0, 0], Process: [2, 0], Assignment: [1, 1], WorkLog: [1, 2] },
+    relations: [["Worker", "1 : N", "Assignment", "작업자별 여러 공정 배정"], ["Process", "1 : N", "Assignment", "공정에 여러 작업자 배치"], ["Assignment", "1 : N", "WorkLog", "배정별 상태 이력 설계"]],
+    diagramGroups: [{ title: "작업 배정·상태 흐름", entities: ["Worker", "Process", "Assignment", "WorkLog"], relationIndexes: [0, 1, 2], layout: { Worker: [0, 0], Process: [2, 0], Assignment: [1, 1], WorkLog: [1, 2] }, labelOffsets: { 0: [-74, 0], 1: [74, 0], 2: [68, 0] } }],
+    architecture: ["Flutter 작업 화면", "공정·작업자 설정", "인원·시간 산식", "타임라인", "저장·승인"],
+    verification: "작업 겹침, 점심 이동, 인원 수 변경에 따른 기준 시간, 분할 배정과 잔업 계산을 중심으로 검증했습니다.",
+    challenges: [["작업자 일정 충돌", "한 사람이 같은 시간대에 두 공정에 중복 배정될 수 있습니다.", "배정 구간의 시작·종료 시간을 비교하여 겹치는 배정을 제한하도록 구성했습니다."], ["점심시간 고정 문제", "현장 일정에 따라 점심시간이 이동합니다.", "점심·휴식을 일반 작업 사이에 배치할 수 있도록 일정을 구성했습니다."], ["기준과 실적 비교", "물량과 인원 수가 달라지면 공정 기준 시간이 달라집니다.", "100건당 기준과 배정 인원을 활용해 시간 비례 산식을 적용했습니다."]],
+  },
+  "JoWalking": {
+    goal: "GPS 경로와 걸음 수를 함께 기록하고, 화면이 꺼져도 이동 흐름을 최대한 유지하도록 설계했습니다.",
+    requirements: ["위치 좌표·걸음 수 수집", "화면 꺼짐 중 위치 기록 유지", "수신 누락 구간 경로 연결", "운동 기록의 일자별 조회", "저장된 이동 경로 시각화"],
+    flow: ["기록 시작", "GPS·걸음 센서 수집", "좌표 누적", "경로 연결", "기록 종료·조회"],
+    entities: [["WalkingSession", "id, started_at, ended_at, steps"], ["RoutePoint", "id, session_id, latitude, longitude, recorded_at"], ["DailyStat", "id, day, total_steps, distance"]],
+    layout: { DailyStat: [0, 0], WalkingSession: [1, 0], RoutePoint: [2, 0] },
+    relations: [["WalkingSession", "1 : N", "RoutePoint", "세션별 시간순 GPS 좌표"], ["DailyStat", "1 : N", "WalkingSession", "일별 세션 집계용 논리 설계"]],
+    diagramGroups: [{ title: "이동 기록·집계 흐름", entities: ["DailyStat", "WalkingSession", "RoutePoint"], relationIndexes: [0, 1], layout: { DailyStat: [0, 0], WalkingSession: [1, 0], RoutePoint: [2, 0] }, labelOffsets: { 0: [44, 0], 1: [-44, 0] } }],
+    architecture: ["Flutter 화면", "위치·걸음 센서", "백그라운드 수집", "좌표 저장", "지도 경로 표시"],
+    verification: "화면 꺼짐·위치 수신 누락·재개 상황에서 기록이 이어지는지와 경로 표시를 점검했습니다.",
+    challenges: [["백그라운드 위치 누락", "화면을 끄면 기기 정책에 따라 GPS 수신이 제한될 수 있습니다.", "백그라운드 위치 수집을 유지하고 누락된 구간은 마지막·다음 유효 좌표를 선으로 연결하도록 개선했습니다."], ["경로 화면 겹침", "하단 시스템 영역과 경로 저장 화면이 겹칠 수 있습니다.", "모바일 안전 영역을 고려해 표시 영역을 조정했습니다."]],
+  },
+  "TranSu": {
+    goal: "사용자 좌표를 기준으로 가까운 버스정류장을 조회하고 공공데이터 응답 장애를 구분할 수 있도록 만든 모바일 앱입니다.",
+    requirements: ["현재 위치 사용", "주변 정류장 API 요청", "정류장 목록과 위치 표시", "인증키·좌표·응답 상태 점검", "API 실패 시 오류 상태 안내"],
+    flow: ["위치 권한 확인", "현재 좌표 확보", "공공 API 호출", "응답 해석", "정류장 결과 표시"],
+    entities: [["StopCache", "stop_id, name, latitude, longitude, cached_at"], ["FavoriteStop", "id, stop_id, saved_at"], ["SearchHistory", "id, searched_at, keyword"]],
+    layout: { StopCache: [1, 0], FavoriteStop: [0, 1], SearchHistory: [2, 1] },
+    relations: [["StopCache", "1 : N", "FavoriteStop", "저장된 정류장 참조에 관한 논리 설계"], ["StopCache", "1 : N", "SearchHistory", "정류장 조회 이력 연결 설계"]],
+    diagramGroups: [{ title: "정류장 캐시·조회 흐름", entities: ["StopCache", "FavoriteStop", "SearchHistory"], relationIndexes: [0, 1], layout: { StopCache: [1, 0], FavoriteStop: [0, 1], SearchHistory: [2, 1] }, labelOffsets: { 0: [-72, 0], 1: [72, 0] } }],
+    architecture: ["Flutter UI", "GPS 좌표", "국토교통부 버스정류장 API", "응답 파싱", "목록·지도"],
+    verification: "위도·경도 전달값, 공공데이터 인증키 유형, 실제 API 응답과 앱 처리 문제를 구분해 점검했습니다.",
+    challenges: [["외부 API 장애", "근접 정류장 호출이 실패하면 앱 오류와 제공 기관 응답 실패를 구분하기 어렵습니다.", "동일 좌표로 API 주소를 직접 호출해 외부 응답 여부와 클라이언트 동작을 분리해 확인했습니다."], ["검색 결과 누락", "좌표나 응답 형식이 올바르지 않으면 인근 정류장 목록을 만들 수 없습니다.", "입력 좌표·요청 파라미터·응답 상태를 단계별로 확인하도록 정리했습니다."]],
+  },
+  "J-Battery": {
+    goal: "배터리 캐릭터와 홈·잠금 배경을 선택하고 화면별로 독립적으로 꾸밀 수 있게 만든 Android 앱입니다.",
+    requirements: ["홈·잠금 화면 설정 분리", "캐릭터·배경 이미지 선택", "이미지 크기·위치 개별 조절", "미리보기와 실제 적용 비율 일치", "중복·손상된 리소스 정리", "상단 배터리 아이콘 표시 옵션"],
+    flow: ["홈·잠금 선택", "배경 선택", "캐릭터 배치", "크기·위치 미리보기", "적용·저장"],
+    entities: [["HomeConfig", "id, background_id, scale_x, scale_y"], ["LockConfig", "id, background_id, character_id, scale"], ["AssetPreference", "id, asset_id, enabled, order_no"]],
+    layout: { HomeConfig: [0, 0], AssetPreference: [1, 1], LockConfig: [2, 0] },
+    relations: [["HomeConfig", "1 : N", "AssetPreference", "홈 화면 선택 이미지 참조 설계"], ["LockConfig", "1 : N", "AssetPreference", "잠금 화면 선택 이미지 참조 설계"]],
+    diagramGroups: [{ title: "홈·잠금 설정 흐름", entities: ["HomeConfig", "AssetPreference", "LockConfig"], relationIndexes: [0, 1], layout: { HomeConfig: [0, 0], AssetPreference: [1, 1], LockConfig: [2, 0] }, labelOffsets: { 0: [-72, 0], 1: [72, 0] } }],
+    architecture: ["Flutter UI", "이미지 미리보기", "Android 홈·잠금 적용", "설정 저장", "사용자 화면"],
+    verification: "캐릭터 중복 표시, 배경 잘림, 이미지 비율 차이, 잠금·홈 설정 간 간섭을 반복 확인했습니다.",
+    challenges: [["미리보기와 실제 화면 비율 불일치", "선택 썸네일과 실제 홈 화면의 크롭 비율이 달라 이미지가 잘렸습니다.", "적용 대상 화면을 기준으로 미리보기를 구성하고 가로·세로 배율을 독립적으로 조정하도록 개선했습니다."], ["홈·잠금 설정 연동", "한쪽 화면을 변경하면 다른 쪽에도 설정이 반영되는 문제가 있었습니다.", "화면별 설정 상태를 분리하는 방향으로 개선했습니다."], ["이미지 리소스 중복", "깨지거나 중복된 캐릭터·배경이 선택 화면을 복잡하게 했습니다.", "기본 이미지와 사용자 다운로드 이미지 중심으로 리소스를 정리했습니다."]],
+  },
+  "World Radio": {
+    goal: "국가·장르를 기준으로 인터넷 라디오 방송을 탐색하고 선택한 방송을 스트리밍 재생하는 앱입니다.",
+    requirements: ["방송국 검색·분류", "방송국 선택·재생", "스트리밍 오류 처리", "즐겨찾기 관리", "최근 청취 목록 설계"],
+    flow: ["국가·장르 선택", "방송국 검색", "스트림 선택", "재생", "즐겨찾기"],
+    entities: [["Station", "id, name, country, genre, stream_url"], ["Favorite", "id, station_id, saved_at"], ["ListenHistory", "id, station_id, listened_at"], ["Cache", "id, station_id, updated_at"]],
+    layout: { Station: [1, 0], Favorite: [0, 1], ListenHistory: [1, 1], Cache: [2, 1] },
+    relations: [["Station", "1 : N", "Favorite", "방송국별 즐겨찾기 참조"], ["Station", "1 : N", "ListenHistory", "방송국별 청취 기록"], ["Station", "1 : N", "Cache", "방송 정보 캐시 설계"]],
+    diagramGroups: [{ title: "방송국·청취 데이터 흐름", entities: ["Station", "Favorite", "ListenHistory", "Cache"], relationIndexes: [0, 1, 2], layout: { Station: [1, 0], Favorite: [0, 1], ListenHistory: [1, 1], Cache: [2, 1] }, labelOffsets: { 0: [-76, 0], 1: [0, 50], 2: [76, 0] } }],
+    architecture: ["Flutter UI", "방송국 목록 API", "검색·필터", "오디오 플레이어", "로컬 설정"],
+    verification: "방송국 선택·재생·중단과 연결되지 않는 스트림의 예외 흐름을 중심으로 설명합니다.",
+    challenges: [["스트림 주소의 변동", "인터넷 방송국이 스트림 주소를 변경하거나 연결을 종료할 수 있습니다.", "방송 정보와 플레이어 상태를 분리하고 연결 실패를 안내하는 방향으로 설계했습니다."], ["탐색 편의", "국가와 방송국 수가 많으면 원하는 방송을 찾기 어렵습니다.", "국가·장르·검색 조건을 중심으로 탐색 흐름을 구성했습니다."]],
+  },
+};
+
+function AppCaseStudy({ project }) {
+  const study = appCaseStudies[project.title];
+  return <section className="app-case-study project-detail" aria-label={`${project.title} 상세 설명`}>
+    <div className="detail-head"><div><p className="section-label">APP PROJECT DETAIL</p><h2>{project.title}</h2><p>{project.description}</p><div className="project-meta"><span>개인 프로젝트</span><span>모바일 앱</span><span>논리 데이터 설계 포함</span></div></div></div>
+    <div className="detail-grid">
+      <article><h3>기술 스택</h3><div className="chip-wrap">{project.stacks.map(x => <span key={x}>{x}</span>)}</div></article>
+      <article><h3>주요 기능 · 요구사항</h3><ul>{study.requirements.map(x => <li key={x}>{x}</li>)}</ul></article>
+      <article className="wide"><h3>서비스 흐름도</h3><div className="flow-line">{study.flow.map((x, i) => <div className="flow-item" key={x}><span>{x}</span>{i < study.flow.length-1 && <b>→</b>}</div>)}</div></article>
+      <article className="wide design-stage-section"><h3>프로젝트 설계 단계</h3><div className="design-steps"><section><span>01</span><h4>문제 정의</h4><p>{study.goal}</p></section><section><span>02</span><h4>요구사항 정리</h4><ul>{study.requirements.map(x => <li key={x}>{x}</li>)}</ul></section><section><span>03</span><h4>ERD · 데이터 설계</h4><p className="erd-version-note">포트폴리오 논리 모델 · 실제 저장소 구현 및 물리 테이블명과 다를 수 있습니다.</p><LogicalErdDiagram design={study} /><details className="erd-details"><summary>관계별 설계 의도 자세히 보기 ({study.relations.length}건)</summary><div className="erd-relation-list">{study.relations.map(([from, ratio, to, desc], i) => <div className="erd-relation" key={`${from}-${to}`} style={{"--relation-color": relationColors[i % relationColors.length]}}><strong><em className="erd-relation-code">R{i+1}</em>{from}</strong><span>{ratio}</span><strong>{to}</strong><p>{desc}</p></div>)}</div></details></section><section><span>04</span><h4>전체 시스템 구조</h4><div className="architecture-diagram">{study.architecture.map((layer,i) => <div className="architecture-node" key={layer}><strong>{layer}</strong>{i < study.architecture.length-1 && <span>→</span>}</div>)}</div></section><section><span>05</span><h4>구현 및 검증</h4><p>{study.verification}</p></section></div></article>
+      <article className="wide"><h3>트러블슈팅 · 설계 포인트</h3><div className="trouble-grid">{study.challenges.map(([title,problem,solve]) => <div className="trouble-card" key={title}><strong>{title}</strong><p><b>문제</b>{problem}</p><p><b>대응·설계</b>{solve}</p></div>)}</div></article>
+    </div>
+  </section>;
+}
 
 const resumeSections = [
 
@@ -537,7 +700,8 @@ K-Digital 교육을 수료하며 개발을 시작했고,
 >>>자동발주
 >>>ToyShop
 >>>WhisperMe
->>>총 4개의 프로젝트를 직접 기획하고 개발했습니다.
+>>>대표 웹 4개를 포함해 웹 5개와 앱 6개,
+>>>총 11개의 프로젝트를 직접 기획하고 개발했습니다.
 
 개발은 많은 것들을 포함하고 있습니다.
 개발을 하다보면 이런저런 기능들을 필요하곤 합니다.
@@ -572,8 +736,8 @@ K-Digital 교육 수료 이후
 SQLD 
 ADSP
 리눅스마스터 2급
-정보처리기사(실기 준비중)
-프로젝트 개발'
+정보처리기사
+프로젝트 개발
 등 꾸준히 공부하며 스스로 성장해왔습니다.
 현재도 대부분의 시간을 프로젝트 개발 , 새로운 기술 학습, 포트폴리오 개선에 투자하고 있습니다.
 
@@ -618,9 +782,8 @@ AI를 잘 쓰는 것도 능력이라고 생각하기에
 만약 제가 입사를 한다면 당연히 실력을 위해서 계속 노력을 할 것이며
 배운 다는 자세도 언젠든 준비되어있습니다.
 
->>>현재 당장의 계획은 7월 2차 정보처리기사 실기를 보고
->>>제가 한 프로젝트에 대한 코드 분석을 하면서 제가 해보고 싶은 
->>>그런 것 들을 생각대로 구현하는게 제 목표입니다.
+>>>정보처리기사 취득 이후에는 프로젝트 코드를 다시 분석하고,
+>>>직접 설계한 서비스를 더 안정적으로 개선하는 것이 목표입니다.
 
 >>>그리고 제가 구현하였던 큰 계획은 
 >>>Spring Boot, postman, React, Docker, AWS 을 
@@ -691,7 +854,25 @@ const skillGroups = [
   },
 ];
 
+const relationColors = [
+  "#e11d48", "#2563eb", "#059669", "#9333ea",
+  "#ea580c", "#0891b2", "#db2777", "#4f46e5",
+  "#ca8a04", "#0284c7", "#65a30d", "#be123c",
+  "#7c3aed", "#0d9488", "#b45309", "#334155",
+];
+
 const projectDesigns = {
+  aboutj: {
+    goal: "영상 탐색·시청과 AI 콘텐츠 생성부터 Shorts 결과물 제작·YouTube 업로드까지 이어지는 콘텐츠 서비스 흐름을 구성했습니다.",
+    requirements: ["관리자·사용자 인증", "영상 콘텐츠 탐색·검색·시청", "AI 기반 주제·콘텐츠 생성", "이미지 소재 검색", "Shorts 결과물 관리", "YouTube OAuth 업로드·이력", "로컬·운영 환경 설정 분리"],
+    erd: [["계정", "Account", "사용자 ID·권한·인증 정보"], ["제작 작업", "ContentJob / ContentAsset", "작업 주제·상태와 이미지·출력물 분리"], ["업로드", "UploadHistory", "업로드 결과·시점·상태 기록"], ["인증", "OAuthToken", "사용자 계정에 연결된 인증 정보 논리 모델"]],
+    entities: [["Account", "id, login_id, role, status"], ["ContentJob", "id, account_id, topic, status, created_at"], ["ContentAsset", "id, job_id, asset_type, file_path"], ["UploadHistory", "id, job_id, platform, status, uploaded_at"], ["OAuthToken", "id, account_id, provider, token_ref"]],
+    layout: {Account:[1,0],ContentJob:[1,1],ContentAsset:[0,2],UploadHistory:[2,2],OAuthToken:[2,0]},
+    relations: [["Account","1 : N","ContentJob","계정별 여러 콘텐츠 제작 작업"], ["ContentJob","1 : N","ContentAsset","제작 작업별 이미지·결과 파일"], ["ContentJob","1 : N","UploadHistory","한 작업에 대한 업로드 시도·결과"], ["Account","1 : N","OAuthToken","계정별 외부 서비스 인증 정보"]],
+    diagramGroups: [{title:"계정·콘텐츠 제작·업로드 · 논리 설계",entities:["Account","ContentJob","ContentAsset","UploadHistory","OAuthToken"],relationIndexes:[0,1,2,3],layout:{Account:[1,0],ContentJob:[1,1],ContentAsset:[0,2],UploadHistory:[2,2],OAuthToken:[2,0]},labelOffsets:{0:[0,44]}}],
+    architecture: ["웹 UI · Thymeleaf", "Spring Boot Controller", "Content · Auth Service", "MySQL", "OpenAI · Gemini · Pexels", "YouTube Data API · OAuth", "AWS EC2"],
+    verification: "로컬 프로필·API 환경변수·YouTube OAuth 설정과 콘텐츠 생성·업로드 단계의 실패 지점을 구분하여 점검했습니다. 이 ERD는 프로젝트 설명용 논리 모델로 물리 DB 테이블명을 단정하지 않습니다.",
+  },
   tannus: {
     goal: "제조·물류 현장에서 포장 지시, 출고, 입고, 재고가 각각 분리되어 발생하던 업무를 하나의 상태 흐름으로 연결하는 것을 목표로 설계했습니다.",
     requirements: ["관리자·포장팀·물류팀 권한 분리", "QR 기반 작업 수량 확인", "출고 완료 후 입고 대상 자동 연결", "재고와 변경 이력 동시 관리", "수정 요청과 무발주 입고 예외 처리"],
@@ -711,25 +892,34 @@ const projectDesigns = {
       ["ExportOrderDetail", "id, export_order_id, model_name, total_qty, outbound_status"],
       ["ExportOutboundScan", "id, export_order_id, detail_id, qty, scan_status"],
       ["ExportChangeRequest", "id, export_order_id, request_reason, status"],
+      ["UnplannedExport", "id, export_order_id, model_name, total_qty, status"],
       ["Item", "id, product_type, model_name, current_qty, location"],
-      ["StockHistory", "id, history_type, model_name, change_qty, after_qty"],
+      ["StockHistory", "id, item_id, history_type, model_name, change_qty, after_qty"],
       ["UnplannedPurchase", "id, packing_order_id, model_name, qty, status"],
     ],
     layout: {
       PackingOrder: [1, 0], PackingOrderDetail: [1, 1], PackingInboundScan: [0, 1],
       PackingOutboundScan: [2, 1], PackingChangeRequest: [0, 2], UnplannedPurchase: [2, 2],
       ExportOrder: [1, 3], ExportOrderDetail: [1, 4], ExportOutboundScan: [0, 4],
-      ExportChangeRequest: [2, 4], Item: [0, 5], StockHistory: [2, 5],
+      ExportChangeRequest: [2, 4], UnplannedExport: [2, 3],
+      Item: [0, 5], StockHistory: [2, 5],
     },
     relations: [
       ["PackingOrder", "1 : N", "PackingOrderDetail", "포장 지시별 여러 품목 상세"],
-      ["PackingOrder", "1 : N", "PackingInboundScan", "포장 지시별 입고 스캔"],
-      ["PackingOrder", "1 : N", "PackingOutboundScan", "포장 지시별 출고 스캔"],
+      ["PackingOrderDetail", "1 : N", "PackingInboundScan", "포장 상세 품목별 입고 스캔"],
+      ["PackingOrderDetail", "1 : N", "PackingOutboundScan", "포장 상세 품목별 출고 스캔"],
       ["PackingOrder", "1 : N", "PackingChangeRequest", "포장 지시별 수정 요청"],
       ["PackingOrder", "1 : N", "UnplannedPurchase", "포장 지시별 무계획 입고 요청"],
       ["ExportOrder", "1 : N", "ExportOrderDetail", "수출 지시별 여러 품목 상세"],
-      ["ExportOrder", "1 : N", "ExportOutboundScan", "수출 지시별 출고 스캔"],
+      ["ExportOrderDetail", "1 : N", "ExportOutboundScan", "수출 상세 품목별 출고 스캔"],
       ["ExportOrder", "1 : N", "ExportChangeRequest", "수출 지시별 수정 요청"],
+      ["ExportOrder", "1 : N", "UnplannedExport", "수출 지시별 무계획 출고 요청"],
+      ["Item", "1 : N", "StockHistory", "품목별 재고 변동 이력"],
+    ],
+    diagramGroups: [
+      { title: "포장·입고 흐름", entities: ["PackingOrder", "PackingOrderDetail", "PackingInboundScan", "PackingOutboundScan", "PackingChangeRequest", "UnplannedPurchase"], relationIndexes: [0, 1, 2, 3, 4], layout: { PackingOrder: [1, 0], PackingOrderDetail: [1, 1], PackingInboundScan: [0, 2], PackingOutboundScan: [2, 2], PackingChangeRequest: [0, 1], UnplannedPurchase: [2, 1] }, labelOffsets: { 0: [0, 66] } },
+      { title: "수출·예외 흐름", entities: ["ExportOrder", "ExportOrderDetail", "ExportOutboundScan", "ExportChangeRequest", "UnplannedExport"], relationIndexes: [5, 6, 7, 8], layout: { ExportOrder: [1, 0], ExportOrderDetail: [1, 1], ExportOutboundScan: [0, 2], ExportChangeRequest: [2, 2], UnplannedExport: [2, 1] }, labelOffsets: { 5: [0, 66] } },
+      { title: "재고·변동 이력", entities: ["Item", "StockHistory"], relationIndexes: [9], layout: { Item: [0, 0], StockHistory: [1, 0] }, labelOffsets: { 9: [66, 0] } },
     ],
     architecture: ["사용자 브라우저", "JSP 화면", "Spring Boot MVC", "Service · MyBatis", "MySQL", "Docker · AWS EC2"],
     verification: "역할별 계정으로 지시 생성부터 QR 스캔, 출고, 입고 확정, 재고 반영까지 전체 흐름을 반복 검증했습니다.",
@@ -763,10 +953,13 @@ const projectDesigns = {
       ["Supplier", "1 : N", "PurchaseOrder", "한 업체에 여러 발주서가 생성"],
       ["PurchaseOrder", "1 : N", "PurchaseOrderDetail", "발주서에 여러 상품 상세를 포함"],
       ["Item", "1 : N", "PurchaseOrderDetail", "상품이 여러 발주 상세에 기록"],
-      ["PurchaseOrder", "N : M", "Item", "purchase_order_detail로 해소된 논리 관계"],
       ["Item", "1 : N", "SaleHistory", "상품별 판매 이력을 누적"],
       ["Item", "1 : N", "StockIoHistory", "상품별 입출고 이력을 누적"],
       ["Item", "1 : N", "StockAdjustHistory", "상품별 수동 조정 이력을 누적"],
+    ],
+    diagramGroups: [
+      { title: "업체·발주 흐름", entities: ["Supplier", "Item", "PurchaseOrder", "PurchaseOrderDetail"], relationIndexes: [0, 1, 2, 3], layout: { Supplier: [0, 0], PurchaseOrder: [2, 0], Item: [0, 1], PurchaseOrderDetail: [2, 1] }, labelOffsets: { 0: [0, 66] } },
+      { title: "상품·재고 이력", entities: ["Item", "SaleHistory", "StockIoHistory", "StockAdjustHistory"], relationIndexes: [4, 5, 6], layout: { Item: [1, 0], SaleHistory: [0, 1], StockIoHistory: [1, 1], StockAdjustHistory: [2, 1] } },
     ],
     architecture: ["관리자 · 직원", "JSP 화면", "Spring Boot", "자동발주 Scheduler", "MyBatis · MySQL", "Docker · AWS EC2"],
     verification: "재고 경계값, 발주 단위 올림, 중복 생성, 업체별 요일과 서버 스케줄러 실행 결과를 확인했습니다.",
@@ -802,20 +995,27 @@ const projectDesigns = {
     },
     relations: [
       ["Member", "1 : N", "Address", "회원별 복수 배송지 관리"],
+      ["Member", "1 : N", "MileageHistory", "회원별 마일리지 이력"],
+      ["Member", "1 : N", "Inquiry", "회원별 일반 문의"],
       ["Member", "1 : N", "Cart", "회원별 장바구니 항목"],
       ["Product", "1 : N", "Cart", "상품별 장바구니 포함 이력"],
-      ["Member", "N : M", "Product", "cart·wishlist·recent_product로 해소된 논리 관계"],
-      ["Member", "1 : N", "Orders", "회원별 주문 내역"],
-      ["Orders", "1 : N", "OrderDetail", "주문별 상품 상세"],
-      ["Product", "1 : N", "OrderDetail", "상품별 주문 상세"],
-      ["Orders", "N : M", "Product", "order_detail로 해소된 논리 관계"],
       ["Member", "1 : N", "Wishlist", "회원별 찜 항목"],
       ["Product", "1 : N", "Wishlist", "상품별 찜 항목"],
       ["Member", "1 : N", "RecentProduct", "회원별 최근 본 상품"],
       ["Product", "1 : N", "RecentProduct", "상품별 최근 조회 기록"],
-      ["Member", "1 : N", "MileageHistory", "회원별 마일리지 이력"],
+      ["Member", "1 : N", "Orders", "회원별 주문 내역"],
+      ["Orders", "1 : N", "OrderDetail", "주문별 상품 상세"],
+      ["Product", "1 : N", "OrderDetail", "상품별 주문 상세"],
+      ["Member", "1 : N", "Review", "회원별 작성 후기"],
       ["Product", "1 : N", "Review", "상품별 후기"],
+      ["Member", "1 : N", "ProductQna", "회원별 상품 문의"],
       ["Product", "1 : N", "ProductQna", "상품별 문의"],
+    ],
+    diagramGroups: [
+      { title: "회원·배송·마일리지", entities: ["Member", "Address", "MileageHistory", "Inquiry"], relationIndexes: [0, 1, 2], layout: { Member: [1, 0], Address: [0, 1], MileageHistory: [1, 1], Inquiry: [2, 1] } },
+      { title: "장바구니·관심 상품", entities: ["Member", "Product", "Cart", "Wishlist", "RecentProduct"], relationIndexes: [3, 4, 5, 6, 7, 8], layout: { Member: [0, 1], Product: [2, 1], Cart: [1, 0], Wishlist: [1, 1], RecentProduct: [1, 2] } },
+      { title: "주문·상품 상세", entities: ["Member", "Orders", "OrderDetail", "Product"], relationIndexes: [9, 10, 11], layout: { Member: [0, 0], Product: [2, 0], Orders: [0, 1], OrderDetail: [2, 1] }, labelOffsets: { 9: [0, 66] } },
+      { title: "후기·상품 문의", entities: ["Member", "Product", "Review", "ProductQna"], relationIndexes: [12, 13, 14, 15], layout: { Member: [0, 1], Product: [2, 1], Review: [1, 0], ProductQna: [1, 2] } },
     ],
     architecture: ["사용자 · 관리자", "Thymeleaf 화면", "Spring Boot", "Service · MyBatis", "MySQL", "Toss Payments · Naver SMTP", "Docker · AWS EC2"],
     verification: "주문 금액과 결제 금액 검증, 결제 방식별 재고 차감, 주문 상태 되돌리기, 기본 배송지와 이미지 예외 처리를 확인했습니다.",
@@ -833,41 +1033,50 @@ const projectDesigns = {
       ["Member", "id, login_id, password, nickname, birth_date"],
       ["ChatRoom", "id, member_id, title, created_at, deleted_yn"],
       ["ChatMessage", "id, room_id, role, content, message_type"],
-      ["ChatHistory", "id, member_id, room_id, user_message, ai_message"],
       ["Todo", "id, member_id, content, todo_date, completed"],
     ],
     layout: {
-      Member: [1, 0], ChatHistory: [0, 1], ChatRoom: [1, 1],
+      Member: [1, 0], ChatRoom: [1, 1],
       ChatMessage: [2, 1], Todo: [2, 0],
     },
     relations: [
       ["Member", "1 : N", "ChatRoom", "회원별 여러 대화방 관리"],
       ["ChatRoom", "1 : N", "ChatMessage", "대화방별 USER·ASSISTANT 메시지 저장"],
-      ["Member", "1 : N", "ChatHistory", "회원별 기존 AI 대화 이력 저장"],
-      ["ChatRoom", "1 : N", "ChatHistory", "대화방별 질의·응답 이력 연결"],
       ["Member", "1 : N", "Todo", "회원별 일정과 완료 상태 관리"],
+    ],
+    diagramGroups: [
+      { title: "AI 대화 흐름", entities: ["Member", "ChatRoom", "ChatMessage"], relationIndexes: [0, 1], layout: { Member: [0, 0], ChatRoom: [1, 0], ChatMessage: [2, 0] }, labelOffsets: { 0: [66, 0], 1: [44, 0] } },
+      { title: "회원 일정 관리", entities: ["Member", "Todo"], relationIndexes: [2], layout: { Member: [0, 0], Todo: [2, 0] } },
     ],
     architecture: ["React 브라우저", "Nginx 정적 배포", "Spring Boot REST API", "MyBatis · MySQL", "OpenAI · Naver · Weather API", "Docker · AWS EC2"],
     verification: "대화방 생성·자동 선택, 대화 이력 저장, 이미지 분석 요청, 모바일 입력창, HTTPS 환경의 API 연결을 확인했습니다.",
   },
 };
 
-function LogicalErdDiagram({ design }) {
-  const canvasWidth = 1500;
-  const boxWidth = 320;
-  const boxHeight = 122;
-  const diagramRelations = design.relations;
-  const positions = design.entities.map((entity, index) => ({
+function LogicalErdGroup({ design, group }) {
+  const canvasWidth = 1280;
+  const boxWidth = 290;
+  const boxHeight = 128;
+  const diagramRelations = group.relationIndexes.map((globalIndex) => [
+    ...design.relations[globalIndex],
+    globalIndex,
+  ]);
+  const groupEntities = group.entities
+      .map((name) => design.entities.find((entity) => entity[0] === name))
+      .filter(Boolean);
+  const maxColumn = Math.max(...groupEntities.map((entity, index) => group.layout?.[entity[0]]?.[0] ?? (index % 3)), 1);
+  const columnGap = (canvasWidth - 120 - boxWidth) / maxColumn;
+  const positions = groupEntities.map((entity, index) => ({
     name: entity[0],
     columns: entity[1].split(",").map((column) => column.trim()),
-    x: 70 + (design.layout?.[entity[0]]?.[0] ?? (index % 3)) * 500,
-    y: 50 + (design.layout?.[entity[0]]?.[1] ?? Math.floor(index / 3)) * 260,
+    x: 60 + (group.layout?.[entity[0]]?.[0] ?? (index % 3)) * columnGap,
+    y: 58 + (group.layout?.[entity[0]]?.[1] ?? Math.floor(index / 3)) * 270,
   }));
 
   const nodeMap = Object.fromEntries(positions.map((node) => [node.name, node]));
-  const rowCount = Math.max(...positions.map((node) => Math.round((node.y - 50) / 260))) + 1;
-  const canvasHeight = Math.max(500, rowCount * 260 + 70);
-  const routedRelations = diagramRelations.map(([from, cardinality, to], relationIndex) => {
+  const rowCount = Math.max(...positions.map((node) => Math.round((node.y - 58) / 270))) + 1;
+  const canvasHeight = Math.max(360, rowCount * 270 + 40);
+  const routedRelations = diagramRelations.map(([from, cardinality, to, , globalIndex], relationIndex) => {
     const source = nodeMap[from];
     const target = nodeMap[to];
     if (!source || !target) return null;
@@ -879,7 +1088,7 @@ function LogicalErdDiagram({ design }) {
     const sameRow = source.y === target.y;
     const longHorizontal = sameRow && Math.abs(target.x - source.x) > 500;
     const horizontal = !longHorizontal && Math.abs(target.x - source.x) >= Math.abs(target.y - source.y);
-    const laneOffset = ((relationIndex % 5) - 2) * 16;
+    const laneOffset = ((relationIndex % 7) - 3) * 22;
     if (longHorizontal) {
       const sourceX = source.x + boxWidth / 2;
       const targetX = target.x + boxWidth / 2;
@@ -888,9 +1097,11 @@ function LogicalErdDiagram({ design }) {
       return {
         key: `${from}-${cardinality}-${to}`,
         cardinality,
+        relationCode: `R${globalIndex + 1}`,
+        color: relationColors[globalIndex % relationColors.length],
         route: `M ${sourceX} ${edgeY} V ${channelY} H ${targetX} V ${edgeY}`,
-        labelX: targetX + targetOffset,
-        labelY: edgeY + 42,
+        labelX: (sourceX + targetX) / 2 + targetOffset,
+        labelY: channelY,
       };
     }
     const x1 = horizontal ? source.x + (target.x > source.x ? boxWidth : 0) : source.x + boxWidth / 2;
@@ -899,21 +1110,54 @@ function LogicalErdDiagram({ design }) {
     const y2 = horizontal ? target.y + boxHeight / 2 : target.y + (target.y > source.y ? 0 : boxHeight);
     const midX = (x1 + x2) / 2;
     const midY = (y1 + y2) / 2;
-    const directionY = y2 >= y1 ? 1 : -1;
-    const directionX = x2 >= x1 ? 1 : -1;
     return {
       key: `${from}-${cardinality}-${to}`,
       cardinality,
+      relationCode: `R${globalIndex + 1}`,
+      color: relationColors[globalIndex % relationColors.length],
       route: horizontal
           ? `M ${x1} ${y1} H ${midX + laneOffset} V ${y2} H ${x2}`
           : `M ${x1} ${y1} V ${midY + laneOffset} H ${x2} V ${y2}`,
-      labelX: horizontal ? x2 - directionX * 58 : x2 + targetOffset,
-      labelY: horizontal ? y2 + targetOffset : y2 - directionY * 62,
+      labelX: horizontal ? midX + laneOffset : (x1 + x2) / 2 + targetOffset,
+      labelY: horizontal ? (y1 + y2) / 2 + targetOffset : midY + laneOffset,
     };
   }).filter(Boolean);
 
+  routedRelations.forEach((relation) => {
+    const relationNumber = Number(relation.relationCode.slice(1)) - 1;
+    const [offsetX = 0, offsetY = 0] = group.labelOffsets?.[relationNumber] ?? [];
+    relation.labelX += offsetX;
+    relation.labelY += offsetY;
+  });
+
+  // 여러 관계가 같은 엔터티로 모일 때 1:N 배지끼리 겹치지 않도록
+  // 가까운 배지를 좌우·상하 레인으로 분산한다.
+  routedRelations.forEach((relation, index) => {
+    const originX = relation.labelX;
+    const originY = relation.labelY;
+    const candidates = [
+      [0, 0], [0, -38], [0, 38], [-82, 0], [82, 0],
+      [-82, -38], [82, -38], [-82, 38], [82, 38],
+      [0, -76], [0, 76], [-164, 0], [164, 0],
+    ];
+    let candidateIndex = 0;
+    while (
+      routedRelations.slice(0, index).some(
+        (placed) => Math.abs(placed.labelX - relation.labelX) < 104
+          && Math.abs(placed.labelY - relation.labelY) < 34
+      )
+      && candidateIndex < candidates.length - 1
+    ) {
+      candidateIndex += 1;
+      relation.labelX = Math.max(42, Math.min(canvasWidth - 42, originX + candidates[candidateIndex][0]));
+      relation.labelY = Math.max(22, Math.min(canvasHeight - 22, originY + candidates[candidateIndex][1]));
+    }
+  });
+
   return (
-      <div className="erd-visual-wrap" aria-label="논리 ERD 관계도">
+      <div className="erd-domain-group">
+        <h6>{group.title}</h6>
+        <div className="erd-visual-wrap" aria-label={`${group.title} 논리 ERD 관계도`}>
         <svg
             className="erd-visual"
             viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
@@ -922,19 +1166,27 @@ function LogicalErdDiagram({ design }) {
         >
           <g className="erd-connectors">
             {routedRelations.map((relation) => (
-                <path key={`${relation.key}-line`} d={relation.route} />
+                <path
+                    key={`${relation.key}-line`}
+                    d={relation.route}
+                    vectorEffect="non-scaling-stroke"
+                    style={{ "--relation-color": relation.color }}
+                />
             ))}
           </g>
 
           <g className="erd-relation-labels">
             {routedRelations.map((relation) => (
-                <g key={`${relation.key}-label`}>
+                <g
+                    key={`${relation.key}-label`}
+                    style={{ "--relation-color": relation.color }}
+                >
                   <rect
                       className="erd-relation-label-bg"
-                      x={relation.labelX - 31}
-                      y={relation.labelY - 14}
-                      width="62"
-                      height="28"
+                      x={relation.labelX - 43}
+                      y={relation.labelY - 13}
+                      width="86"
+                      height="26"
                       rx="3"
                   />
                   <text
@@ -943,7 +1195,7 @@ function LogicalErdDiagram({ design }) {
                       y={relation.labelY + 4}
                       textAnchor="middle"
                   >
-                    {relation.cardinality}
+                    {relation.relationCode} · {relation.cardinality}
                   </text>
                 </g>
             ))}
@@ -969,8 +1221,87 @@ function LogicalErdDiagram({ design }) {
             ))}
           </g>
         </svg>
+        </div>
+      </div>
+  );
+}
+
+function ClearErdGroup({ design, group }) {
+  const entityMap = Object.fromEntries(design.entities.map(([name, columns]) => [name, columns]));
+  const relations = group.relationIndexes.map((relationIndex) => {
+    const [from, cardinality, to, description] = design.relations[relationIndex];
+    return {
+      from,
+      cardinality,
+      to,
+      description,
+      relationCode: `R${relationIndex + 1}`,
+      color: relationColors[relationIndex % relationColors.length],
+    };
+  });
+
+  const renderEntityCard = (entityName) => {
+    const columns = (entityMap[entityName] ?? "").split(",").map((column) => column.trim()).filter(Boolean);
+    return (
+        <article className="erd-crow-entity">
+          <strong>{entityName}</strong>
+          <div>
+            {columns.map((column, columnIndex) => {
+              const keyType = columnIndex === 0 ? "PK" : column.endsWith("_id") ? "FK" : "";
+              return (
+                  <code key={column}>
+                    <b>{keyType}</b>
+                    <span>{column}</span>
+                  </code>
+              );
+            })}
+          </div>
+        </article>
+    );
+  };
+
+  return (
+      <section className="erd-domain-group erd-clear-group">
+        <h6>{group.title}</h6>
+        <div className="erd-clear-relations">
+          {relations.map((relation) => (
+              <div
+                  className="erd-clear-relation"
+                  key={`${relation.relationCode}-${relation.from}-${relation.to}`}
+                  style={{ "--relation-color": relation.color }}
+              >
+                {renderEntityCard(relation.from)}
+                <div className="erd-crow-connector">
+                  <svg viewBox="0 0 340 76" role="img" aria-label={`${relation.from} 일대다 ${relation.to}`}>
+                    <text x="170" y="15" textAnchor="middle">{relation.relationCode} · 비식별 관계</text>
+                    <line className="erd-crow-main" x1="48" y1="40" x2="292" y2="40" />
+                    <line className="erd-crow-mark" x1="38" y1="27" x2="38" y2="53" />
+                    <line className="erd-crow-mark" x1="48" y1="27" x2="48" y2="53" />
+                    <line className="erd-crow-mark" x1="292" y1="27" x2="292" y2="53" />
+                    <line className="erd-crow-mark" x1="292" y1="40" x2="314" y2="22" />
+                    <line className="erd-crow-mark" x1="292" y1="40" x2="314" y2="40" />
+                    <line className="erd-crow-mark" x1="292" y1="40" x2="314" y2="58" />
+                    <text className="erd-crow-cardinality" x="20" y="44">1</text>
+                    <text className="erd-crow-cardinality" x="324" y="44">N</text>
+                  </svg>
+                </div>
+                {renderEntityCard(relation.to)}
+                <p>{relation.description}</p>
+              </div>
+          ))}
+        </div>
+      </section>
+  );
+}
+
+function LogicalErdDiagram({ design }) {
+  return (
+      <div className="erd-domain-groups">
+        {design.diagramGroups.map((group) => (
+            <LogicalErdGroup key={group.title} design={design} group={group} />
+        ))}
         <p className="erd-visual-note">
-          관계선 가운데의 1:N·N:M 표기는 테이블 사이의 물리적·논리적 관계를 나타냅니다.
+          업무 영역별로 엔터티를 분리 배치했습니다. 선의 색상과 R번호는 아래 테이블 관계표와 연결됩니다.
         </p>
       </div>
   );
@@ -978,54 +1309,19 @@ function LogicalErdDiagram({ design }) {
 
 function App() {
 
+  const PORTFOLIO_PIN = "9999";
   const secretResumeMode = window.location.hash === "#resume";
-  const MAINTENANCE = !secretResumeMode;
+  const MAINTENANCE = false;
 
-  if (MAINTENANCE) {
-    return (
-        <div className="maintenance">
-          <div className="maintenance-card">
-
-            <div className="maintenance-title-row">
-              <h1
-                  className="secret-resume-title"
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => {
-                    window.location.hash = "resume";
-                    window.location.reload();
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      window.location.hash = "resume";
-                      window.location.reload();
-                    }
-                  }}
-              >
-                현재는 본업에 집중하고 있습니다.
-              </h1>
-            </div>
-
-            <p>
-              현재 진행 중인 프로젝트와 업무에 집중하고 있어
-              <br />
-              포트폴리오는 잠시 비공개 상태입니다.
-            </p>
-
-            <p className="maintenance-sub">
-              더 좋은 서비스와 프로젝트로 다시 찾아뵙겠습니다.
-              <br />
-              감사합니다.
-            </p>
-
-          </div>
-        </div>
-    );
-  }
-
+  const [isUnlocked, setIsUnlocked] = useState(
+      () => sessionStorage.getItem("portfolio-unlocked") === "1"
+  );
+  const [pin, setPin] = useState("");
+  const [pinError, setPinError] = useState("");
   const [screen, setScreen] = useState(secretResumeMode ? "select" : "intro");
-  const [battle, setBattle] = useState(false);
+  const [battle] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
+  const [selectedApp, setSelectedApp] = useState(otherProjects[0]);
   const [resumeIndex, setResumeIndex] = useState(0);
 
   // ⭐ 여기 추가
@@ -1055,6 +1351,94 @@ function App() {
     scrollTopHard();
   }, [screen]);
 
+  const submitPin = (event) => {
+    event.preventDefault();
+
+    if (pin === PORTFOLIO_PIN) {
+      sessionStorage.setItem("portfolio-unlocked", "1");
+      setIsUnlocked(true);
+      setPinError("");
+      return;
+    }
+
+    setPin("");
+    setPinError("비밀번호가 올바르지 않습니다.");
+  };
+
+  if (!isUnlocked) {
+    return (
+        <div className="pin-screen">
+          <div className="stars" aria-hidden="true"></div>
+          <form className="pin-card" onSubmit={submitPin}>
+            <div className="pin-site-name">DOCUMENT</div>
+            <h1>포트폴리오</h1>
+            <p className="pin-guide">비밀번호 4자리를 입력해 주세요.</p>
+
+            <input
+                className="pin-input"
+                type="password"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={4}
+                value={pin}
+                onChange={(event) => {
+                  const value = event.target.value.replace(/\D/g, "").slice(0, 4);
+                  setPin(value);
+                  setPinError("");
+                }}
+                placeholder="0000"
+                autoFocus
+                aria-label="4자리 비밀번호"
+            />
+
+            {pinError && <div className="pin-error">{pinError}</div>}
+
+            <button className="pin-button" type="submit" disabled={pin.length !== 4}>
+              확인
+            </button>
+          </form>
+        </div>
+    );
+  }
+
+  if (MAINTENANCE) {
+    return (
+        <div className="maintenance">
+          <div className="maintenance-card">
+            <div className="maintenance-title-row">
+              <h1
+                  className="secret-resume-title"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => {
+                    window.location.hash = "resume";
+                    window.location.reload();
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      window.location.hash = "resume";
+                      window.location.reload();
+                    }
+                  }}
+              >
+                현재는 본업에 집중하고 있습니다.
+              </h1>
+            </div>
+            <p>
+              현재 진행 중인 프로젝트와 업무에 집중하고 있어
+              <br />
+              포트폴리오는 잠시 비공개 상태입니다.
+            </p>
+            <p className="maintenance-sub">
+              더 좋은 서비스와 프로젝트로 다시 찾아뵙겠습니다.
+              <br />
+              감사합니다.
+            </p>
+          </div>
+        </div>
+    );
+  }
+
   const moveScreen = (target) => {
     if (target === screen) {
       window.scrollTo({
@@ -1079,16 +1463,6 @@ function App() {
       behavior: "smooth",
       block: "start",
     });
-  };
-
-  const startBattle = () => {
-    setBattle(true);
-    setTimeout(() => setBattle(false), 1700);
-    setTimeout(() => {
-      document.getElementById("project-zone")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 1200);
   };
 
   if (screen === "intro") {
@@ -1124,7 +1498,7 @@ function App() {
                   className="mode-card"
                   onClick={() => {
                     window.scrollTo(0, 0);
-                    setScreen("portfolio");
+                    setScreen("portfolio-select");
                   }}
               >
                 <span className="mode-icon">01</span>
@@ -1152,6 +1526,41 @@ function App() {
     );
   }
 
+  if (screen === "portfolio-select") {
+    return (
+        <main className="select-screen">
+          <div className="stars"></div>
+          <section className="select-wrap">
+            <p className="pixel-small">PORTFOLIO</p>
+            <h1>프로젝트 선택</h1>
+            <div className="mode-grid">
+              <button
+                  type="button"
+                  className="mode-card"
+                  onClick={() => moveScreen("portfolio")}
+              >
+                <span className="mode-icon">01</span>
+                <strong>WEB</strong>
+                <p>웹 서비스 5개의 설계, 구현, 데이터베이스와 배포 과정을 확인합니다.</p>
+                <em>웹 프로젝트 열기</em>
+              </button>
+
+              <button
+                  type="button"
+                  className="mode-card"
+                  onClick={() => moveScreen("apps")}
+              >
+                <span className="mode-icon">02</span>
+                <strong>APP</strong>
+                <p>생활과 현장 업무의 문제를 해결하기 위해 제작한 모바일 앱 6개를 확인합니다.</p>
+                <em>앱 프로젝트 열기</em>
+              </button>
+            </div>
+          </section>
+        </main>
+    );
+  }
+
   if (screen === "resume") {
     const current = resumeSections[resumeIndex];
 
@@ -1159,7 +1568,7 @@ function App() {
         <main className="page resume-page">
           <nav className="top-bar">
             <button onClick={() => moveScreen("select")}>MODE</button>
-            <button onClick={() => moveScreen("portfolio")}>PORTFOLIO</button>
+            <button onClick={() => moveScreen("portfolio-select")}>PORTFOLIO</button>
           </nav>
 
           <section className="resume-hero">
@@ -1352,6 +1761,13 @@ function App() {
               {[
                 {
                   icon: "",
+                  title: "정보처리기사",
+                  org: "한국산업인력공단",
+                  date: "2026.09",
+                  major: true,
+                },
+                {
+                  icon: "",
                   title: "데이터분석준전문가(ADsP)",
                   org: "한국데이터산업진흥원(K-DATA)",
                   date: "2026.03",
@@ -1372,7 +1788,6 @@ function App() {
                   date:"2025.10",
                   major:true,
                 },
-                { icon: "", title: "정보처리기사(필기) 실기 7월 시험 예정", org: "한국산업인력공단", date: "2025.05",major:true, },
                 {
                   icon:"",
                   title:"JLPT N4",
@@ -1489,11 +1904,64 @@ function App() {
     );
   }
 
+  if (screen === "apps") {
+    return (
+        <main className="page portfolio-page app-portfolio-page">
+          <nav className="top-bar">
+            <button onClick={() => moveScreen("select")}>MODE</button>
+            <button onClick={() => moveScreen("resume")}>RESUME</button>
+            <button onClick={() => moveScreen("portfolio-select")}>PORTFOLIO</button>
+            <button onClick={() => moveScreen("portfolio")}>WEB</button>
+          </nav>
+
+          <section className="project-zone app-project-zone">
+            <p className="section-label">APP PROJECTS</p>
+            <h2>모바일 앱 프로젝트</h2>
+            <p className="app-project-intro">
+              생활과 현장 업무에서 발견한 문제를 모바일 앱 6개로 직접 기획하고 구현했습니다.
+            </p>
+
+            <div className="project-grid app-project-grid">
+              {otherProjects.map((project, index) => (
+                  <article className={`project-card app-project-card ${selectedApp.title === project.title ? "active" : ""}`} key={project.title} onClick={() => setSelectedApp(project)} role="button" tabIndex={0} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") setSelectedApp(project); }} aria-pressed={selectedApp.title === project.title}>
+                    <span>APP {String(index + 1).padStart(2, "0")}</span>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <div className="other-project-stacks">
+                      {project.stacks.map((stack) => (
+                          <span key={stack}>{stack}</span>
+                      ))}
+                    </div>
+                    <div className="app-data-design">
+                      <strong>DATA DESIGN</strong>
+                      <span>{project.dataDesign}</span>
+                    </div>
+                  </article>
+              ))}
+            </div>
+
+            <p className="app-detail-instruction">프로젝트 카드를 선택하면 아래에서 상세 설계와 트러블슈팅을 확인할 수 있습니다.</p>
+            <AppCaseStudy project={selectedApp} />
+            <p className="project-count-note">
+              WEB 5 · APP 6 · TOTAL 11
+            </p>
+          </section>
+
+          <section className="ending">
+            <p className="section-label">CONTACT</p>
+            <h2>현장을 이해하고 기술로 해결하겠습니다.</h2>
+            <p>사용자의 문제를 이해하고<br />기술로 해결하는 개발자가 되겠습니다.</p>
+          </section>
+        </main>
+    );
+  }
+
   return (
       <main className={`page portfolio-page ${battle ? "shake" : ""}`}>
         <nav className="top-bar">
           <button onClick={() => moveScreen("select")}>MODE</button>
           <button onClick={() => moveScreen("resume")}>RESUME</button>
+          <button onClick={() => moveScreen("apps")}>APP</button>
           <button onClick={moveToProjects}>PROJECTS</button>
         </nav>
 
@@ -1561,16 +2029,22 @@ function App() {
                   </a>
                 </article>
             ))}
+
           </div>
 
           <div className="project-detail">
-            <div className="detail-head">
+            <div className={`detail-head ${selectedProject.id === "aboutj" ? "detail-head-aboutj" : ""}`}>
               <div>
                 <p className="section-label">Project</p>
                 <h2>
                   {selectedProject.title}
                 </h2>
                 <p>{selectedProject.summary}</p>
+                <div className="project-meta" aria-label="프로젝트 개발 정보">
+                  {(selectedProject.meta ?? []).map((item) => (
+                      <span key={item}>{item}</span>
+                  ))}
+                </div>
               </div>
               <div className="detail-buttons">
                 {selectedProject.excel && (
@@ -1582,61 +2056,35 @@ function App() {
                       Excel
                     </a>
                 )}
-                <a
+                {selectedProject.github && <a
                     className="visit-btn"
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                   README
-                </a>
+                </a>}
 
-                <a
+                {selectedProject.demo && <a
                     className="demo-btn"
                     href={selectedProject.demo}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                   DEMO
-                </a>
+                </a>}
               </div>
             </div>
 
             <section className="project-download-box">
               <div className="project-download-copy">
-                <span>DOWNLOAD</span>
-                <h3>지원 자료 다운로드</h3>
-                <p>포트폴리오와 자기소개서를 PDF로 확인할 수 있습니다.</p>
-              </div>
-
-              <div className="project-download-buttons">
-                <a
-                    className="document-download-btn portfolio-pdf-btn"
-                    href="/downloads/포트폴리오.pdf"
-                    download="포트폴리오.pdf"
-                >
-                  <b>PDF</b>
-                  <span>
-                    <small>PORTFOLIO PDF</small>
-                    포트폴리오 다운로드
-                  </span>
-                </a>
-
-                <a
-                    className="document-download-btn resume-pdf-btn"
-                    href="/downloads/자기소개서.pdf"
-                    download="자기소개서.pdf"
-                >
-                  <b>PDF</b>
-                  <span>
-                    <small>RESUME PDF</small>
-                    자기소개서 다운로드
-                  </span>
-                </a>
+                <span>DOCUMENTS</span>
+                <h3>지원 자료 업데이트 중</h3>
+                <p>웹 5개와 앱 6개, 총 11개 프로젝트를 반영한 PDF를 준비하고 있습니다.</p>
               </div>
             </section>
 
-            <div className="account-card">
+            {selectedProject.accounts?.length > 0 && <div className={`account-card${selectedProject.id === "aboutj" ? " account-card-aboutj" : ""}`}> 
 
               <h3>Demo Account</h3>
 
@@ -1663,7 +2111,7 @@ function App() {
 
               )}
 
-            </div>
+            </div>}
 
             <div className="detail-grid">
               <article>
@@ -1725,27 +2173,25 @@ function App() {
                     </div>
 
                     <h5>논리 ERD · 핵심 엔터티</h5>
+                    <p className="erd-version-note">{selectedProject.id === "aboutj" ? "콘텐츠 제작·업로드 구조 설명을 위한 논리 ERD · 운영 DB 테이블 확정 정보가 아닙니다." : "ERD v3.1 · 업무 영역별 엔터티 배치와 정렬된 R번호·1:N 관계도"}</p>
                     <LogicalErdDiagram design={projectDesigns[selectedProject.id]} />
-                    <div className="erd-entity-grid">
-                      {projectDesigns[selectedProject.id].entities.map(([name, columns]) => (
-                          <article className="erd-entity" key={name}>
-                            <strong>{name}</strong>
-                            <code>{columns}</code>
-                          </article>
-                      ))}
-                    </div>
-
-                    <h5>테이블 관계</h5>
-                    <div className="erd-relation-list">
-                      {projectDesigns[selectedProject.id].relations.map(([from, cardinality, to, description]) => (
-                          <div className="erd-relation" key={`${from}-${to}`}>
-                            <strong>{from}</strong>
+                    <details className="erd-details">
+                      <summary>관계별 설계 의도 자세히 보기 ({projectDesigns[selectedProject.id].relations.length}건)</summary>
+                      <div className="erd-relation-list">
+                      {projectDesigns[selectedProject.id].relations.map(([from, cardinality, to, description], relationIndex) => (
+                          <div
+                              className="erd-relation"
+                              key={`${from}-${to}`}
+                              style={{ "--relation-color": relationColors[relationIndex % relationColors.length] }}
+                          >
+                            <strong><em className="erd-relation-code">R{relationIndex + 1}</em>{from}</strong>
                             <span>{cardinality}</span>
                             <strong>{to}</strong>
                             <p>{description}</p>
                           </div>
                       ))}
-                    </div>
+                      </div>
+                    </details>
                   </section>
                   <section>
                     <span>04</span>
@@ -1767,7 +2213,7 @@ function App() {
                 </div>
               </article>
 
-              <article className="wide">
+              {selectedProject.codes?.length > 0 && <article className="wide">
                 <h3>핵심 구현 코드</h3>
                 <div className="code-grid">
                   {(selectedProject.codes ?? []).map((item) => (
@@ -1777,9 +2223,9 @@ function App() {
                       </div>
                   ))}
                 </div>
-              </article>
+              </article>}
 
-              <article className="wide">
+              {selectedProject.integrations?.length > 0 && <article className="wide">
                 <h3>API / 자동화 연동</h3>
                 <div className="integration-grid">
                   {(selectedProject.integrations ?? []).map((item) => (
@@ -1790,18 +2236,18 @@ function App() {
                       </div>
                   ))}
                 </div>
-              </article>
+              </article>}
 
               <article className="wide">
-                <h3>Docker / AWS 배포</h3>
-                <p>
+                <h3>{selectedProject.id === "aboutj" ? "AWS · 환경 설정" : "Docker / AWS 배포"}</h3>
+                {selectedProject.id === "aboutj" ? <p>Spring Boot 기반 서비스를 AWS EC2에 배포하고, 로컬 프로필과 운영 환경변수·OAuth 인증 구성을 분리했습니다. 비밀번호·API 키·토큰은 포트폴리오에 노출하지 않습니다.</p> : <p>
                   Spring Boot 프로젝트는 jar 빌드 후 Docker 컨테이너로 실행했고,
                   React 프로젝트는 Vite 빌드 후 정적 파일을 서비스했습니다.
                   AWS EC2 보안그룹에서 프로젝트별 포트를 열고 실제 외부 접속까지 확인했습니다.
-                </p>
-                <pre>{`docker ps
+                </p>}
+                {selectedProject.id !== "aboutj" && <pre>{`docker ps
 docker logs container-name --tail=100
-docker compose up -d --build`}</pre>
+docker compose up -d --build`}</pre>}
               </article>
 
               <article className="wide">

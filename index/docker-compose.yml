@@ -1,0 +1,7 @@
+services:
+  portfolio-rpg:
+    build: .
+    container_name: portfolio-rpg
+    ports:
+      - "5175:80"
+    restart: always
