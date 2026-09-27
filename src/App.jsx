@@ -1520,6 +1520,62 @@ function App() {
                 <p>자기소개, 경력, 기술스택, 성장 방향을 확인합니다.</p>
                 <em>열기</em>
               </button>
+
+              <button
+                  type="button"
+                  className="mode-card"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    setScreen("download");
+                  }}
+              >
+                <span className="mode-icon">03</span>
+                <strong>DOWNLOAD</strong>
+                <p>지원용 포트폴리오 PDF와 자기소개서 PDF를 바로 다운로드합니다.</p>
+                <em>다운로드</em>
+              </button>
+            </div>
+          </section>
+        </main>
+    );
+  }
+
+  if (screen === "download") {
+    return (
+        <main className="page download-page">
+          <nav className="top-bar">
+            <button onClick={() => moveScreen("select")}>MODE</button>
+            <button onClick={() => moveScreen("portfolio-select")}>PORTFOLIO</button>
+            <button onClick={() => moveScreen("resume")}>RESUME</button>
+          </nav>
+
+          <section className="download-wrap">
+            <p className="section-label">DOWNLOAD</p>
+            <h1>지원 자료 다운로드</h1>
+            <p className="download-intro">
+              포트폴리오 전체 프로젝트 자료와 자기소개서를 PDF로 확인할 수 있습니다.
+            </p>
+
+            <div className="download-grid">
+              <a className="download-card" href="/downloads/정경수_포트폴리오.pdf" download="정경수_포트폴리오.pdf">
+                <span className="download-num">01</span>
+                <div>
+                  <small>PORTFOLIO PDF</small>
+                  <h2>포트폴리오</h2>
+                  <p>웹 5개 · 앱 6개 · 기능 · 권한 · DB/ERD · 기술스택 · 문제 해결</p>
+                  <strong>PDF DOWNLOAD ↓</strong>
+                </div>
+              </a>
+
+              <a className="download-card" href="/downloads/정경수_자기소개서.pdf" download="정경수_자기소개서.pdf">
+                <span className="download-num">02</span>
+                <div>
+                  <small>SELF INTRODUCTION PDF</small>
+                  <h2>자기소개서</h2>
+                  <p>프로필 · 지원동기 · 성장과정 · 경력 · 자격증 · Final Message</p>
+                  <strong>PDF DOWNLOAD ↓</strong>
+                </div>
+              </a>
             </div>
           </section>
         </main>
@@ -1528,32 +1584,176 @@ function App() {
 
   if (screen === "portfolio-select") {
     return (
-        <main className="select-screen">
-          <div className="stars"></div>
-          <section className="select-wrap">
-            <p className="pixel-small">PORTFOLIO</p>
-            <h1>프로젝트 선택</h1>
-            <div className="mode-grid">
+        <main className="page portfolio-page overview-page">
+          <nav className="top-bar overview-top-bar">
+            <button onClick={() => moveScreen("select")}>MODE</button>
+            <button onClick={() => moveScreen("resume")}>RESUME</button>
+            <button onClick={() => moveScreen("download")}>DOWNLOAD</button>
+          </nav>
+
+        <section className="overview-zone" id="project-overview">
+          <div className="overview-head">
+            <p className="section-label">PROJECT OVERVIEW</p>
+            <h2>웹 5개 · 앱 6개, 구현 범위를 한눈에</h2>
+            <p>
+              현장 경험을 바탕으로 제조·물류, 자동화, 커머스, AI, 콘텐츠, 위치 기반 서비스까지
+              직접 기획하고 구현했습니다. 아래에서는 각 프로젝트의 사용자 권한과 핵심 기능 범위를 먼저 요약하고,
+              이어지는 상세 영역에서 DB 설계·ERD·기술 스택·문제 해결 과정을 확인할 수 있습니다.
+            </p>
+          </div>
+
+          <div className="overview-block">
+            <div className="overview-block-title">
+              <span>01</span>
+              <div><strong>WEB PROJECTS</strong><small>5 PROJECTS</small></div>
+            </div>
+            <div className="overview-list">
+              <article className="overview-card">
+                <div className="overview-card-head"><span>WEB 01</span><h3>Tannus MES</h3></div>
+                <p className="overview-desc">제조·물류 현장의 포장, 출고, 입고, 재고 흐름을 디지털화한 MES 시스템</p>
+                <div className="overview-row"><b>권한</b><p>관리자 · 포장팀 · 물류팀</p></div>
+                <div className="overview-row"><b>관리자</b><p>작업 현황 확인 · 재고 조회 · 수정 요청 승인/반려 · 무발주 예외 처리</p></div>
+                <div className="overview-row"><b>포장/물류</b><p>포장지시 · QR 스캔 · 중복 처리 방지 · 출고 완료 · 입고 확정 · 재고 반영</p></div>
+                <div className="overview-tags"><span>권한 제어</span><span>QR</span><span>재고 이력</span><span>승인 프로세스</span><span>AWS</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>WEB 02</span><h3>AutoOrder</h3></div>
+                <p className="overview-desc">현재고와 최소재고를 비교해 발주가 필요한 상품을 자동으로 생성하는 시스템</p>
+                <div className="overview-row"><b>권한</b><p>관리자 · 직원</p></div>
+                <div className="overview-row"><b>관리</b><p>상품·업체·현재고 관리 · 최소재고 · 업체별 발주요일 · 입고 처리</p></div>
+                <div className="overview-row"><b>자동화</b><p>부족수량 계산 · 박스단위 올림 · 중복발주 방지 · 스케줄러 · 발주 상태 관리</p></div>
+                <div className="overview-tags"><span>Scheduler</span><span>자동발주</span><span>재고</span><span>중복 방지</span><span>Docker</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>WEB 03</span><h3>ToyShop</h3></div>
+                <p className="overview-desc">회원가입부터 상품 주문·결제·배송까지 연결한 전자상거래 서비스</p>
+                <div className="overview-row"><b>권한</b><p>일반 회원 · 관리자</p></div>
+                <div className="overview-row"><b>회원</b><p>회원가입/로그인 · 상품 조회 · 장바구니 · 주문 · 결제 · 주문내역 확인</p></div>
+                <div className="overview-row"><b>관리자</b><p>상품 관리 · 주문 조회 · 주문/배송 상태 관리 · 운영 화면</p></div>
+                <div className="overview-tags"><span>회원</span><span>장바구니</span><span>Toss 결제</span><span>주문</span><span>배송</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>WEB 04</span><h3>WhisperMe</h3></div>
+                <p className="overview-desc">AI 상담과 일상 생산성 기능을 하나의 서비스에 통합한 AI 웹서비스</p>
+                <div className="overview-row"><b>사용자</b><p>회원 사용자 · 사용자별 데이터 분리</p></div>
+                <div className="overview-row"><b>AI</b><p>AI 채팅 · 이미지 분석 · 음성 입력 · 최신 뉴스 검색 연계</p></div>
+                <div className="overview-row"><b>서비스</b><p>채팅방 관리 · 대화 저장 · Todo · 날씨 · 운세 · 사용자별 기록</p></div>
+                <div className="overview-tags"><span>OpenAI</span><span>Vision</span><span>Voice</span><span>Todo</span><span>Search API</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>WEB 05</span><h3>About J</h3></div>
+                <p className="overview-desc">콘텐츠 탐색부터 AI Shorts 제작·YouTube 업로드까지 연결한 웹서비스</p>
+                <div className="overview-row"><b>권한</b><p>관리자 · 일반 사용자</p></div>
+                <div className="overview-row"><b>콘텐츠</b><p>영상 탐색/시청 · 이미지 검색 · AI 콘텐츠 생성 · Shorts 결과물 제작</p></div>
+                <div className="overview-row"><b>연동</b><p>OpenAI/Gemini · Pexels · YouTube OAuth · 업로드 결과 확인</p></div>
+                <div className="overview-tags"><span>AI</span><span>Pexels</span><span>Shorts</span><span>YouTube OAuth</span><span>AWS</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div className="overview-block overview-app-block">
+            <div className="overview-block-title">
+              <span>02</span>
+              <div><strong>APP PROJECTS</strong><small>6 PROJECTS</small></div>
+            </div>
+            <div className="overview-list">
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 01</span><h3>JKS MAKER</h3></div>
+                <p className="overview-desc">Flutter 앱과 PC AI 서버를 연결한 AI 음악 생성·편집 앱</p>
+                <div className="overview-row"><b>생성</b><p>AI 보컬 완성곡 · 장르/분위기/BPM/길이 설정 · 랜덤곡/설정 기반 생성</p></div>
+                <div className="overview-row"><b>편집/파일</b><p>가사·싱크 · 미리듣기 · WAV 저장 · 라이브러리 · Remix/이어 만들기 구조</p></div>
+                <div className="overview-row"><b>연동</b><p>Flutter · FastAPI · ACE-Step · Tailscale · 로컬 GPU 서버</p></div>
+                <div className="overview-tags"><span>Flutter</span><span>FastAPI</span><span>AI Audio</span><span>WAV</span><span>Tailscale</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 02</span><h3>스다스 작업관리</h3></div>
+                <p className="overview-desc">택배 물량을 기준으로 공정별 인원·시간·급여를 계획하는 현장 작업관리 앱</p>
+                <div className="overview-row"><b>관리</b><p>공정 등록 · 기준수량/시간 · 작업자 선택 · 시작시간 · 인원 배정 · 승인</p></div>
+                <div className="overview-row"><b>일정</b><p>개인별 타임라인 · 작업 분할 · 중복배정 방지 · 점심/휴식/셋팅시간</p></div>
+                <div className="overview-row"><b>계산</b><p>물량·인원 비례 시간 · 기준 초과/미달 · 잔업 1.5배 · 작업자별 임금</p></div>
+                <div className="overview-tags"><span>Flutter</span><span>SQLite</span><span>Timeline</span><span>작업 배정</span><span>급여 계산</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 03</span><h3>JoWalking</h3></div>
+                <p className="overview-desc">GPS와 걸음 센서로 이동 경로와 활동 기록을 저장·조회하는 앱</p>
+                <div className="overview-row"><b>기록</b><p>GPS 위치 · 걸음 수 · 거리 · 이동 세션 · 날짜별 활동 기록</p></div>
+                <div className="overview-row"><b>지도</b><p>경로 시각화 · 백그라운드 위치 수집 · 누락 구간 연결</p></div>
+                <div className="overview-row"><b>데이터</b><p>세션별 RoutePoint · 일별 통계 · 저장된 이동 경로 조회</p></div>
+                <div className="overview-tags"><span>GPS</span><span>Mapbox</span><span>Background</span><span>Route</span><span>통계</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 04</span><h3>TranSu</h3></div>
+                <p className="overview-desc">현재 위치를 기준으로 주변 버스정류장을 조회하는 공공데이터 기반 앱</p>
+                <div className="overview-row"><b>위치</b><p>위치 권한 · 현재 좌표 · 근접 정류장 탐색 · 정류장 위치 표시</p></div>
+                <div className="overview-row"><b>API</b><p>공공데이터 호출 · 인증키/좌표/응답 검증 · 오류 상태 구분</p></div>
+                <div className="overview-row"><b>안정성</b><p>응답 파싱 · 캐시 구조 · API 장애와 앱 오류 분리 확인</p></div>
+                <div className="overview-tags"><span>공공 API</span><span>GPS</span><span>Cache</span><span>Error Handling</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 05</span><h3>J-Battery</h3></div>
+                <p className="overview-desc">홈·잠금화면의 배경과 배터리 캐릭터를 독립적으로 꾸미는 Android 앱</p>
+                <div className="overview-row"><b>화면</b><p>홈/잠금 설정 분리 · 정지/움직이는 배경 · 사용자 이미지 적용</p></div>
+                <div className="overview-row"><b>캐릭터</b><p>배터리/상단 캐릭터 선택 · 크기 · 위치 · 가로/세로 배율 조절</p></div>
+                <div className="overview-row"><b>설정</b><p>미리보기 · 개별 저장 · 리소스 정리 · 배터리 아이콘 표시 옵션</p></div>
+                <div className="overview-tags"><span>Flutter</span><span>Android</span><span>Wallpaper</span><span>Local Storage</span></div>
+              </article>
+
+              <article className="overview-card">
+                <div className="overview-card-head"><span>APP 06</span><h3>World Radio</h3></div>
+                <p className="overview-desc">국가·장르별 인터넷 라디오를 탐색하고 실시간 재생하는 스트리밍 앱</p>
+                <div className="overview-row"><b>탐색</b><p>국가/장르 선택 · 방송국 검색 · 필터 · 방송국 정보 조회</p></div>
+                <div className="overview-row"><b>재생</b><p>실시간 스트리밍 · 재생/정지 · 연결 실패 처리 · 플레이어 상태 관리</p></div>
+                <div className="overview-row"><b>저장</b><p>즐겨찾기 · 최근 청취/캐시 논리 설계 · 로컬 설정</p></div>
+                <div className="overview-tags"><span>Flutter</span><span>Radio API</span><span>Audio</span><span>Favorites</span><span>Cache</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div className="overview-core">
+            <strong>CORE IMPLEMENTATION</strong>
+            <div>
+              <span>로그인/권한 분리</span><span>관리자 기능</span><span>CRUD</span><span>승인 프로세스</span>
+              <span>재고/입출고</span><span>주문/결제/배송</span><span>자동화 스케줄러</span><span>공공 API</span>
+              <span>AI API</span><span>GPS/지도</span><span>파일 저장</span><span>스트리밍</span><span>Docker/AWS</span>
+            </div>
+            <p>아래에서 WEB 또는 APP을 선택하면 프로젝트별 설계 배경, DB·ERD, 서비스 흐름, 기술 스택, 트러블슈팅을 자세히 확인할 수 있습니다.</p>
+          </div>
+        </section>
+
+          <section className="overview-project-choice">
+            <p className="section-label">SELECT PROJECT TYPE</p>
+            <h2>상세 프로젝트 보기</h2>
+            <p>전체 구현 범위를 확인했다면, 보고 싶은 프로젝트 유형을 선택해 주세요.</p>
+
+            <div className="overview-choice-grid">
               <button
                   type="button"
-                  className="mode-card"
+                  className="overview-choice-card"
                   onClick={() => moveScreen("portfolio")}
               >
-                <span className="mode-icon">01</span>
+                <span>01</span>
                 <strong>WEB</strong>
-                <p>웹 서비스 5개의 설계, 구현, 데이터베이스와 배포 과정을 확인합니다.</p>
-                <em>웹 프로젝트 열기</em>
+                <p>웹 서비스 5개의 DB 설계, ERD, 기능 구현, 트러블슈팅과 배포 과정을 확인합니다.</p>
+                <em>WEB PROJECTS →</em>
               </button>
 
               <button
                   type="button"
-                  className="mode-card"
+                  className="overview-choice-card"
                   onClick={() => moveScreen("apps")}
               >
-                <span className="mode-icon">02</span>
+                <span>02</span>
                 <strong>APP</strong>
-                <p>생활과 현장 업무의 문제를 해결하기 위해 제작한 모바일 앱 6개를 확인합니다.</p>
-                <em>앱 프로젝트 열기</em>
+                <p>모바일 앱 6개의 기능 설계, 데이터 구조, 구현 과정과 문제 해결 내용을 확인합니다.</p>
+                <em>APP PROJECTS →</em>
               </button>
             </div>
           </section>
@@ -1569,6 +1769,7 @@ function App() {
           <nav className="top-bar">
             <button onClick={() => moveScreen("select")}>MODE</button>
             <button onClick={() => moveScreen("portfolio-select")}>PORTFOLIO</button>
+            <button onClick={() => moveScreen("download")}>DOWNLOAD</button>
           </nav>
 
           <section className="resume-hero">
@@ -1912,6 +2113,7 @@ function App() {
             <button onClick={() => moveScreen("resume")}>RESUME</button>
             <button onClick={() => moveScreen("portfolio-select")}>PORTFOLIO</button>
             <button onClick={() => moveScreen("portfolio")}>WEB</button>
+            <button onClick={() => moveScreen("download")}>DOWNLOAD</button>
           </nav>
 
           <section className="project-zone app-project-zone">
@@ -1962,6 +2164,7 @@ function App() {
           <button onClick={() => moveScreen("select")}>MODE</button>
           <button onClick={() => moveScreen("resume")}>RESUME</button>
           <button onClick={() => moveScreen("apps")}>APP</button>
+          <button onClick={() => moveScreen("download")}>DOWNLOAD</button>
           <button onClick={moveToProjects}>PROJECTS</button>
         </nav>
 
@@ -1993,8 +2196,10 @@ function App() {
           </div>
         </section>
 
+
+
         <section className="project-zone" id="project-zone">
-          <p className="section-label">PROJECTS</p>
+          <p className="section-label">PROJECTS · DETAIL</p>
           <h2>실제 경험을 서비스로 구현한 프로젝트</h2>
 
           <div className="project-grid">
@@ -2079,8 +2284,8 @@ function App() {
             <section className="project-download-box">
               <div className="project-download-copy">
                 <span>DOCUMENTS</span>
-                <h3>지원 자료 업데이트 중</h3>
-                <p>웹 5개와 앱 6개, 총 11개 프로젝트를 반영한 PDF를 준비하고 있습니다.</p>
+                <h3>지원 자료 다운로드</h3>
+                <p>포트폴리오 PDF와 자기소개서 PDF는 상단 DOWNLOAD 메뉴에서 받을 수 있습니다.</p>
               </div>
             </section>
 

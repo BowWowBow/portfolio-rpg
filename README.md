@@ -1,3 +1,13 @@
+# Portfolio v4.8 - Overview First
+
+변경 사항
+- PORTFOLIO 선택 후 바로 WEB/APP으로 이동하지 않고 PROJECT OVERVIEW를 먼저 표시
+- WEB 5개 + APP 6개의 권한/기능 범위를 한 화면에서 확인
+- Overview 하단에서 WEB / APP 상세 프로젝트를 선택
+- WEB 상세 화면에서는 Overview를 제거해 본문 집중도 개선
+- 기존 DB/ERD/기술스택/트러블슈팅 상세 내용 유지
+- PIN: 9999
+
 # v4.4 PIN Lock Update
 
 - Portfolio entry PIN: 9999
