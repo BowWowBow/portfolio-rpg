@@ -1,68 +1,28 @@
-# Portfolio v4.8 - Overview First
+# Portfolio v5.5 — WhisperMe Memory + RAG Update
 
-변경 사항
-- PORTFOLIO 선택 후 바로 WEB/APP으로 이동하지 않고 PROJECT OVERVIEW를 먼저 표시
-- WEB 5개 + APP 6개의 권한/기능 범위를 한 화면에서 확인
-- Overview 하단에서 WEB / APP 상세 프로젝트를 선택
-- WEB 상세 화면에서는 Overview를 제거해 본문 집중도 개선
-- 기존 DB/ERD/기술스택/트러블슈팅 상세 내용 유지
-- PIN: 9999
+- v5.2의 모든 피드백 반영 내용 유지
+- Web 5 + App 6 Overview의 `기술 활용`을 `기술명 — 실제 사용 용도` 형식으로 상세화
+- 각 카드의 `선택 이유` 유지
+- 프로젝트 상세의 SCREENSHOTS 자리, 기술 선택 이유, 아키텍처, ERD, 트러블슈팅, 향후 개선 계획 유지
+- JoWalking의 Foreground Service는 향후 개선안과 구분되도록 Overview의 현재 구현 표현을 `이동 좌표 기록`으로 정리
 
-# v4.4 PIN Lock Update
+로컬 확인: `npm install` 후 `npm run dev`
 
-- Portfolio entry PIN: 9999
-- 4-digit numeric gate added
-- Unlock state is kept for the current browser tab session
 
-# 정경수 개발자 포트폴리오
+## v5.4
+- PROJECT OVERVIEW 강조 프로젝트: Tannus MES, ToyShop, WhisperMe, 스다스 작업관리, JoWalking, TranSu
+- 강조 방식: 옅은 네이비 계열 배경 + 상단 포인트 라인. 기존 내용/스크린샷 자리 유지.
 
-현장 경험을 바탕으로 업무 문제를 웹서비스로 구현한 풀스택 개발 포트폴리오입니다.
 
-## 대표 웹 프로젝트
+## v5.5
+- WhisperMe를 Memory + RAG 기반 LLM 서비스로 갱신
+- 사용자 공통 메모리 / 대화방 메모리 구조 반영
+- OpenAI Embedding + Cosine Similarity 기반 RAG 설명 추가
+- Question Router, Naver Search + LLM 흐름 반영
+- WhisperMe DB/ERD에 ConversationMemory, UserMemory, RagDocument, RagChunk 추가
+- RAG 출처 표시 및 Docker Compose 통합 실행 내용 반영
 
-| 프로젝트 | 설명 | 주요 기술 |
-| --- | --- | --- |
-| Tannus MES | 포장 지시, QR 스캔, 출고, 입고, 재고를 연결한 제조·물류 관리 시스템 | Java, Spring Boot, JSP, MyBatis, MySQL |
-| AutoOrder | 현재고와 최소재고, 업체별 발주일, 박스 단위를 반영한 자동발주 시스템 | Java, Spring Boot, Scheduler, MyBatis, MySQL |
-| ToyShop | 회원, 상품, 장바구니, 주문, 결제와 관리자 기능을 구현한 쇼핑몰 | Java, Spring Boot, Thymeleaf, Toss Payments |
-| WhisperMe | AI 채팅, 이미지 분석, 일정, 날씨와 음성 입력을 제공하는 웹서비스 | React, Spring Boot, OpenAI API, MySQL |
-| About J | 영상 콘텐츠 탐색과 AI Shorts 제작·YouTube 업로드를 연결한 웹서비스 | Spring Boot, Thymeleaf, MySQL, YouTube Data API |
 
-각 프로젝트는 개인 개발로 진행했으며 기획, 데이터 설계, 백엔드, 화면 구현과 AWS 배포를 담당했습니다.
-
-## 포트폴리오 구성
-
-- 프로젝트별 주요 기능과 서비스 흐름
-- 핵심 구현 코드와 외부 API 연동
-- 문제 해결 과정
-- 요구사항, 논리 ERD와 시스템 구조
-- 데모 계정, GitHub README와 시연 영상
-
-## 포트폴리오 기술
-
-- React 19
-- Vite 8
-- CSS
-- AWS EC2
-- Nginx
-
-## 실행
-
-```bash
-npm install
-npm run dev
-```
-
-배포용 빌드와 코드 검사는 다음 명령으로 확인합니다.
-
-```bash
-npm run lint
-npm run build
-```
-
-## 공개 주소
-
-- 포트폴리오: https://jkyungsoo.com
-- GitHub: https://github.com/BowWowBow
-
-전체 구성은 웹 5개와 앱 6개, 총 11개 프로젝트입니다. ERD 관계도에 엔터티·필드를 표시하고, 관계별 설계 의도는 펼쳐보기로 제공합니다. 앱 ERD는 실제 DB 구현과 다를 수 있는 논리 모델입니다.
+## V6.12 업데이트
+- 스다스 작업관리, JoWalking 실제 화면 캡처 추가
+- 앱 상세 화면 이미지 클릭 시 확대 기능 연결
